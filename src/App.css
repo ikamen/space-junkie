@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+/* modal inside portal */
+
+.portalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(50,50,50,0.6);
+}
