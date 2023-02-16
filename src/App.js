@@ -12,7 +12,9 @@ function App() {
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen(!isModalOpen);
 
-  useEffect(() => setNasaImage,[])
+  useEffect(() => {
+    setNasaImage();
+  },[]);
     
   return (
     <div className='App'>
