@@ -1,7 +1,6 @@
 import {createPortal} from 'react-dom';
 import { useState, useEffect } from 'react';
-import PulseLoader from "react-spinners/PulseLoader"
-
+import PulseLoader from "react-spinners/PulseLoader";
 
 function Modal(props) {
     const [map,setMap] = useState('');
@@ -17,11 +16,11 @@ function Modal(props) {
         const lon = position.coords.longitude;
         // console.log(lat);
         // console.log(lon);
-        getStarMap(hash,lat,lon);
+        getStarMap(hash,lat,lon,props.date);
     
     }
     
-    const getStarMap = (hash,lat,lon) => {
+    const getStarMap = (hash,lat,lon,date) => {
         const options = {
             method: 'POST',
             // mode: 'no-cors',
@@ -30,7 +29,7 @@ function Modal(props) {
                 'content-type': 'application/json',
                 'Authorization': `Basic ${hash}`,
                 },
-                body: `{"observer":{"date":"2023-02-28","latitude":${lat},"longitude":${lon}},"style":"default","view":{"parameters":{"constellation":"ori"},"type":"constellation"}}`
+                body: `{"observer":{"date":"${date}","latitude":${lat},"longitude":${lon}},"style":"default","view":{"parameters":{"constellation":"ori"},"type":"constellation"}}`
         }
         fetch('https://api.astronomyapi.com/api/v2/studio/star-chart', options)
             .then(res => res.json())
@@ -62,7 +61,9 @@ function Modal(props) {
                         />
                     </p>)
                     : 
-                    <div className='portal-overlay' style={{backgroundImage: `url(${map})`}}></div>
+                    <div className='portal-overlay' style={{backgroundImage: `url(${map})`}}>
+                        <button onClick={props.toggleModal}>X</button>
+                    </div>
                 ),document.getElementById('portal'))
             }
         </>
