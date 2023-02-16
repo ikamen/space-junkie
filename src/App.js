@@ -12,8 +12,8 @@ function App() {
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen(!isModalOpen);
 
-  setNasaImage();
-  
+  useEffect(() => setNasaImage,[])
+    
   return (
     <div className='App'>
       <h1 style={{color: 'white'}}>Space Junkie</h1>
