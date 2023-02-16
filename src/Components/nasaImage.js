@@ -15,9 +15,6 @@ function nasaImage(props) {
 
     date = [year, month, day].join('-');
 
-
-    console.log (date);
-
     fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=${nasaAPIKey}`)
     .then(res => res.json())
     .then(data => {
