@@ -29,7 +29,7 @@ function Modal(props) {
                 'content-type': 'application/json',
                 'Authorization': `Basic ${hash}`,
                 },
-                body: `{"observer":{"date":"${date}","latitude":${lat},"longitude":${lon}},"style":"invertednpm","view":{"parameters":{"constellation":"${constelation}"},"type":"constellation"}}`
+                body: `{"observer":{"date":"${date}","latitude":${lat},"longitude":${lon}},"style":"inverted","view":{"parameters":{"constellation":"${constelation}"},"type":"constellation"}}`
         }
         fetch('https://api.astronomyapi.com/api/v2/studio/star-chart', options)
             .then(res => res.json())
