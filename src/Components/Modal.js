@@ -16,11 +16,11 @@ function Modal(props) {
         const lon = position.coords.longitude;
         // console.log(lat);
         // console.log(lon);
-        getStarMap(hash,lat,lon,props.date);
+        getStarMap(hash,lat,lon,props.date,props.constelation);
     
     }
     
-    const getStarMap = (hash,lat,lon,date) => {
+    const getStarMap = (hash,lat,lon,date,constelation) => {
         const options = {
             method: 'POST',
             // mode: 'no-cors',
@@ -29,7 +29,7 @@ function Modal(props) {
                 'content-type': 'application/json',
                 'Authorization': `Basic ${hash}`,
                 },
-                body: `{"observer":{"date":"${date}","latitude":${lat},"longitude":${lon}},"style":"default","view":{"parameters":{"constellation":"ori"},"type":"constellation"}}`
+                body: `{"observer":{"date":"${date}","latitude":${lat},"longitude":${lon}},"style":"invertednpm","view":{"parameters":{"constellation":"${constelation}"},"type":"constellation"}}`
         }
         fetch('https://api.astronomyapi.com/api/v2/studio/star-chart', options)
             .then(res => res.json())
@@ -40,11 +40,12 @@ function Modal(props) {
     }
 
     useEffect(() => {
+        setLoading(true)
         if(hasLoaded) {
           navigator.geolocation.getCurrentPosition(getUserLocation);
         }
         setHasLoaded(true);
-      },[props.isOpen])
+      },[props.isOpen,props.date,props.constelation])
 
     return (
         <>
@@ -61,7 +62,12 @@ function Modal(props) {
                         />
                     </p>)
                     : 
-                    <div className='portal-overlay' style={{backgroundImage: `url(${map})`}}>
+                    <div className='portal-overlay' 
+                    style={{
+                        backgroundImage: `url(${map})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'auto',
+                        backgroundPosition: 'center'}}>
                         <button onClick={props.toggleModal}>X</button>
                     </div>
                 ),document.getElementById('portal'))
