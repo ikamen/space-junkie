@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./Components/Modal";
 import Map from "./Components/Map";
 import moment from "moment";
