@@ -1,5 +1,6 @@
 import './App.css';
-import setNasaImage from './Components/nasaImage'
+import setNasaImage from './Components/nasaImage';
+import SearchBar from './Components/SearchBar';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <div>
       <h1 style={{color: 'white'}}>Space Junkie</h1>
+      <SearchBar/>
     </div>
   );
 }
