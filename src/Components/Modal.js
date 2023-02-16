@@ -1,9 +1,12 @@
 import {createPortal} from 'react-dom';
 import { useState, useEffect } from 'react';
+import PulseLoader from "react-spinners/PulseLoader"
+
 
 function Modal(props) {
     const [map,setMap] = useState('');
     const [isLoading,setLoading] = useState(true);
+    const [color, setColor] = useState('#07336d')
     const [hasLoaded,setHasLoaded] = useState(false);
     const getUserLocation = (position) => {
         const applicationId = "eca02537-5f0d-4488-b966-92971fb9735b"
@@ -48,8 +51,18 @@ function Modal(props) {
         <>
             {props.isOpen && 
                 createPortal((
-                    isLoading ? <p>Loading...</p> : <div className='portalOverlay' style={{backgroundImage: `url(${map})`}}>
-                    </div>
+                    isLoading ? ( 
+                    <p className='pulse-loader'>
+                        <PulseLoader
+                            color={color}
+                            loading={isLoading}
+                            size={20}
+                            aria-label="Loading Spinner"
+                            speedMultiplier='.5'
+                        />
+                    </p>)
+                    : 
+                    <div className='portal-overlay' style={{backgroundImage: `url(${map})`}}></div>
                 ),document.getElementById('portal'))
             }
         </>
