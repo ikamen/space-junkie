@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 function nasaImage() {
-
+    
     const nasaAPIKey = 'vpguNBgY5z5n0C4jP9SfnQaGB0NouzupV3pCCDq0';
 
     //Generate a random date between today and start of 2022 to use as a parameter for the NASA API
