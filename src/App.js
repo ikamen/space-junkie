@@ -9,7 +9,7 @@ function App() {
   
   return (
     <div className="App">
-      <button onClick={toggleModal}>Show map</button>
+      <button onClick={toggleModal}>{isModalOpen ? 'Hide' : 'Show'} map</button>
       <Modal isOpen={isModalOpen} />
       {/* <h1>{starMap}</h1> */}
     </div>
