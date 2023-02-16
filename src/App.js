@@ -11,6 +11,8 @@ function App() {
   const [constelation,setConstelation] = useState('ori');
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen(!isModalOpen);
+
+  setNasaImage();
   
   return (
     <div className='App'>
