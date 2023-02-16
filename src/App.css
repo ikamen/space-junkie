@@ -65,3 +65,24 @@
     transform: rotate(360deg);
   }
 }
+
+/* modal inside portal */
+
+.portal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(50,50,50,0.6);
+}
+
+.pulse-loader {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
