@@ -2,6 +2,9 @@ import { useState } from "react";
 import DatePicker from "react-date-picker";
 import { constellations } from "../constelation-data";
 import Select from "react-select";
+import styled from "styled-components";
+
+
 
 export default function Map(props) {
 

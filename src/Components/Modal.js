@@ -8,21 +8,39 @@ import styled from 'styled-components';
 
 const ContainerDiv = styled.div`
     position: absolute;
-    max-width: 960px;
+    max-width: 850px;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
     margin: auto;
     // height: 90%;
     width: 90%;
-    background-color: rgba(50,50,50,0.6);
+    background-color: rgba(54,65,86);
 `
 
 const Img = styled.img`
     display: block;
-    margin: 0 auto;
+    width: 95%;
+    margin: 10px auto;
+    margin-bottom: 0;
+    position: relative;
+    border-radius: 8px;
+    background-size: cover;
+    backgorund-position: center;
 `
+const Button = styled.button`
+    position: absolute;
+    top: 1.2rem;
+    right: 1.8rem;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    // font-size: .8rem;
+    // padding: .2rem;
+`
+
+
 
 function Modal(props) {
     console.log(props)
@@ -92,8 +110,8 @@ function Modal(props) {
                         </ContainerDiv>)
                         : (
                         <ContainerDiv>
-                            <button onClick={props.toggleModal}>X</button>
                             <Img src={map} alt="constellation map" />
+                            <Button onClick={props.toggleModal}>X</Button>
                             <Constelation constelation={props.constelation.label} date={props.date} />
                         </ContainerDiv>
                         )

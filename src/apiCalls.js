@@ -1,5 +1,4 @@
 export const getConstelationData = (constelation) => {
-    const name = "Octans"
     const options = {
         method: 'GET',
         headers: {
@@ -15,6 +14,6 @@ export const getConstelationData = (constelation) => {
             else {
                 console.log('no data for',constelation)
             }})
-        .catch(err => console.error(err));
-    
+        .catch(err => console.error(err));   
 }
+

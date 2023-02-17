@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { getConstelationData } from "../apiCalls";
-import { constellations } from "../constelation-data";
 import styled from "styled-components";
 import ConstelationObjects from "./ConstelationObjects";
 
@@ -11,9 +8,10 @@ const ContainerDiv = styled.div`
     justify-content: center;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
     color: #fff;
     font-size: 25px;
+    font-weight: normal;
 `
 
 const P = styled.p`

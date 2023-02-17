@@ -11,6 +11,13 @@ const ContainerDiv = styled.div`
     color: #fff;
 `
 
+const Button = styled.button`
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+`
+
 export default function ConstelationObjects(props) {
     const constellationArray = constelationPlanets.filter(obj => obj.constellation === props.constelation);
     const [currentIndex,setCurrentIndex] = useState(0);
@@ -28,9 +35,9 @@ export default function ConstelationObjects(props) {
 
     return (
         <ContainerDiv>
-            <button onClick={handlePrev}>prev</button>
+            <Button onClick={handlePrev}>prev</Button>
             {constelationObject[currentIndex]}
-            <button onClick={handleNext}>next</button>
+            <Button onClick={handleNext}>next</Button>
         </ContainerDiv>
     )
 }
