@@ -5,16 +5,20 @@ import moment from 'moment';
 import './App.css';
 import setNasaImage from './Components/nasaImage';
 import SearchBar from './Components/SearchBar';
+import Constelation from './Components/Constelation';
 
 function App() {
   const [date,setDate] = useState(new Date());
-  const [constelation,setConstelation] = useState('ori');
+  const [constelation,setConstelation] = useState({
+    value: 'ori',
+    label: 'orion'
+  });
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen(!isModalOpen);
 
-  useEffect(() => {
-    setNasaImage();
-  },[]);
+  // useEffect(() => {
+  //   setNasaImage();
+  // },[]);
     
   return (
     <div className='App'>
