@@ -1,8 +1,6 @@
-function SearchBar(props) {
+function LocationSearchBar(props) {
     return (
         <>
-            <div id='search-wrapper' class='d-flex'>
-                <p>Sky Map</p>
                 <input
                     value={props.search}
                     onChange={props.handleInputChange}
@@ -17,9 +15,8 @@ function SearchBar(props) {
                         <tr>Result 2</tr>
                     </table> */}
                 </div>
-            </div>
         </>
     )
 }
   
-export default SearchBar;
+export default LocationSearchBar;

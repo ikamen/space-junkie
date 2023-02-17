@@ -4,7 +4,7 @@ import Map from "./Components/Map";
 import moment from "moment";
 import "./App.css";
 import setNasaImage from "./Components/nasaImage";
-import SearchBar from "./Components/SearchBar";
+import LocationSearchBar from "./Components/LocationSearchBar";
 import Header from "./Components/Header";
 
 function App() {
@@ -23,7 +23,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar />
+      <div id='search-wrapper' class='d-flex'>
+        <h2>Sky Map</h2>
+        <LocationSearchBar />
       <Map
         toggleModal={toggleModal}
         isOpen={isModalOpen}
@@ -32,6 +34,7 @@ function App() {
         constelation={constelation}
         setConstelation={setConstelation}
       />
+      </div>
       <Modal
         isOpen={isModalOpen}
         toggleModal={toggleModal}
@@ -39,6 +42,7 @@ function App() {
         constelation={constelation}
       />
     </div>
+    
   );
 }
 
