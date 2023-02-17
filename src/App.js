@@ -10,15 +10,15 @@ import Constelation from './Components/Constelation';
 function App() {
   const [date,setDate] = useState(new Date());
   const [constelation,setConstelation] = useState({
-    value: 'ori',
-    label: 'orion'
+    value: '',
+    label: ''
   });
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen(!isModalOpen);
 
-  // useEffect(() => {
-  //   setNasaImage();
-  // },[]);
+  useEffect(() => {
+    setNasaImage();
+  },[]);
     
   return (
     <div className='App'>
