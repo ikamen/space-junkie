@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 .App {
   text-align: center;
   box-sizing: border-box;
 }
-=======
->>>>>>> 5140cd0 (navbar and logo)
-
 
 .App-header {
   background-color: #282c34;
@@ -22,6 +18,14 @@
   color: #61dafb;
 }
 
+/* Bootstrap Navbar custom styles */
+.navbar-dark a {
+  color: white;
+}
+.navbar-dark a:hover {
+  background-color: rgb(92, 92, 92);
+}
+
 /* Search bar */
 #search-wrapper {
   display: flex;
@@ -34,7 +38,6 @@
   align-items: middle;
   justify-content: center;
   padding: 8%;
-
 }
 
 #search-wrapper p {
@@ -49,7 +52,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -71,7 +73,7 @@
   margin: auto;
   height: 90%;
   width: 90%;
-  background-color: rgba(50,50,50,0.6);
+  background-color: rgba(50, 50, 50, 0.6);
 }
 
 .pulse-loader {

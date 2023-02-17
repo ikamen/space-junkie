@@ -6,8 +6,7 @@ import "./App.css";
 import setNasaImage from "./Components/nasaImage";
 import SearchBar from "./Components/SearchBar";
 import Header from "./Components/Header";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Constelation from './Components/Constelation';
+import Constelation from "./Components/Constelation";
 
 function App() {
   const [date,setDate] = useState(new Date());
