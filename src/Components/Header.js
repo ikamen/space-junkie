@@ -4,10 +4,13 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../images/logoHQ.svg";
 
 const styles = {
-  
   img: { height: "clamp(1.7rem, 3.5vw, 4rem)" },
   nav: { marginLeft: "auto" },
-  navLink: { fontSize: "clamp(1rem, 1.5vw, 4rem)", alignItems: "center" },
+  navLink: {
+    fontSize: "clamp(1rem, 1.5vw, 4rem)",
+    alignItems: "center",
+    color: "white",
+  },
 };
 
 const Header = () => {
