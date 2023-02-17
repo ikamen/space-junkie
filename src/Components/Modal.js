@@ -98,6 +98,7 @@ function Modal(props) {
                 createPortal((
                     isLoading ? (
                         <ContainerDiv>
+                            <Button onClick={props.toggleModal}>X</Button>
                             <p className='pulse-loader'>
                                 <PulseLoader
                                     color={color}
