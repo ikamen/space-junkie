@@ -13,6 +13,7 @@ const ContainerDiv = styled.div`
     left: 0;
     right: 0;
     margin: auto;
+    margin-top: 100px;
     // height: 90%;
     width: 90%;
     background-color: rgba(54,65,86);
