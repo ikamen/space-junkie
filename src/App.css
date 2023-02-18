@@ -27,13 +27,33 @@
   width: 110px;
 }
 
+.date-picker {
+  background-color: rgba(54,69,79, 0.7);
+}
+
 .navbar-dark a:hover {
   background-color: rgb(92, 92, 92);
 }
 
+.btn {
+  color: white;
+  background-color: rgba(66, 54, 79, 0.8);
+  border: none;
+  margin: 10px auto;
+}
 /* Search bar */
+
 .search-element {
-  padding-bottom: 20px;
+  margin-bottom: 15px;
+  padding: 2px;
+}
+
+.date-picker {
+  color: black;
+  background-color: rgba(255,255,255, 0.4);
+  margin-bottom: 15px;
+  padding: 2px;
+  border: none;
 }
 
 #search-wrapper {
@@ -54,9 +74,6 @@
   padding-bottom: 20px;
 }
 
-#location-searchbar {
-  padding-bottom: 30px;
-}
 
 @keyframes App-logo-spin {
   from {

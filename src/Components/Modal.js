@@ -15,8 +15,8 @@ const ContainerDiv = styled.div`
     margin-top: 100px;
     // height: 90%;
     width: 90%;
-    background-color: rgba(54,65,86);
-`
+    background-color: #36454F;
+`;
 
 const Img = styled.img`
   display: block;

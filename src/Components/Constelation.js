@@ -23,8 +23,8 @@ function Constelation(props) {
 
     return (
         <ContainerDiv>
-                <Title>Discover the objects in {props.constelation} constellation on {props.date}</Title>
-                <ConstelationObjects constelation={props.constelation} />
+            <Title>Discover the objects in {props.constelation} constellation on {props.date}</Title>
+            <ConstelationObjects constelation={props.constelation} />
         </ContainerDiv>
     )
 }   
