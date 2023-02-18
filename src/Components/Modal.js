@@ -6,16 +6,17 @@ import Constelation from "./Constelation";
 import styled from "styled-components";
 
 const ContainerDiv = styled.div`
-  position: absolute;
-  max-width: 850px;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  // height: 90%;
-  width: 90%;
-  background-color: rgba(54, 65, 86);
-`;
+    position: absolute;
+    max-width: 850px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 100px;
+    // height: 90%;
+    width: 90%;
+    background-color: rgba(54,65,86);
+`
 
 const Img = styled.img`
   display: block;
