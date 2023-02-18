@@ -6,21 +6,20 @@ import "./App.css";
 import setNasaImage from "./Components/nasaImage";
 import SearchBar from "./Components/SearchBar";
 import Header from "./Components/Header";
-import Constelation from "./Components/Constelation";
 
 function App() {
-  const [date,setDate] = useState(new Date());
-  const [constelation,setConstelation] = useState({
-    value: '',
-    label: ''
+  const [date, setDate] = useState(new Date());
+  const [constelation, setConstelation] = useState({
+    value: "",
+    label: "",
   });
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen(!isModalOpen);
 
   useEffect(() => {
     setNasaImage();
-  },[]);
-    
+  }, []);
+
   return (
     <div className="App">
       <Header />
