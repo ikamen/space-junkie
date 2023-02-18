@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "./Components/Modal";
-import Map from "./Components/Map";
+import ConstellationsSearchBar from "./Components/ConstellationsSearchBar";
 import moment from "moment";
 import "./App.css";
 import setNasaImage from "./Components/nasaImage";
@@ -23,10 +23,11 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       <div id='search-wrapper' class='d-flex'>
-        <h2>Sky Map</h2>
+        <h2 class='search-heading'>Sky Map</h2>
         <LocationSearchBar />
-      <Map
+        <ConstellationsSearchBar
         toggleModal={toggleModal}
         isOpen={isModalOpen}
         date={date}
@@ -35,6 +36,7 @@ function App() {
         setConstelation={setConstelation}
       />
       </div>
+
       <Modal
         isOpen={isModalOpen}
         toggleModal={toggleModal}

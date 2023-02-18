@@ -22,35 +22,40 @@
 .navbar-dark a {
   color: white;
 }
+
+.btn {
+  width: 110px;
+}
+
 .navbar-dark a:hover {
   background-color: rgb(92, 92, 92);
 }
 
 /* Search bar */
+.search-element {
+  padding-bottom: 20px;
+}
+
 #search-wrapper {
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 10%;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 45%;
+  width: 55%;
   align-items: middle;
   justify-content: center;
-  padding: 8%;
+  padding: 50px 10%;
 }
 
-#search-wrapper p {
-  margin: auto;
+.search-heading {
+  margin:auto;
   padding-bottom: 20px;
-  font-size: calc(7px + 2vmin);
 }
 
-#search-input {
-  margin: 10px, 5px;
-  /* width: 50%; */
-  align-items: center;
-  justify-content: center;
+#location-searchbar {
+  padding-bottom: 30px;
 }
 
 @keyframes App-logo-spin {

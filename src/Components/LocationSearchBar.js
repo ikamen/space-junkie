@@ -1,20 +1,14 @@
+import Select from "react-select";
+
 function LocationSearchBar(props) {
+
+    const locations = [];
+
     return (
         <>
-                <input
-                    value={props.search}
-                    onChange={props.handleInputChange}
-                    name='location'
-                    type='text'
-                    placeholder='Set your observing location...'
-                    id='search-input'
-                />
-                <div id='results-dropdown' class='d-none'>
-                    {/* <table>
-                        <tr>Result 1</tr>
-                        <tr>Result 2</tr>
-                    </table> */}
-                </div>
+            <Select options={locations} onChange='' placeholder='Choose a location' id='location-searchbar'/>
+            
+            <button className="btn btn-light"> Show map</button>
         </>
     )
 }
