@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ConstelationObject from "./ConstelationObject";
-import { constelationPlanets } from "../constelations-planets";
+import { constelationObjects } from "../constelation-objects";
 import styled from "styled-components"
 
 const ContainerDiv = styled.div`
@@ -19,7 +19,7 @@ const Button = styled.button`
 `
 
 export default function ConstelationObjects(props) {
-    const constellationArray = constelationPlanets.filter(obj => obj.constellation === props.constelation);
+    const constellationArray = constelationObjects.filter(obj => obj.constellation === props.constelation);
     const [currentIndex,setCurrentIndex] = useState(0);
     const constelationObject = constellationArray.map(obj => {
         return <ConstelationObject name={obj.name}/>
