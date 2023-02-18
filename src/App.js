@@ -41,21 +41,23 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App column fx-an-cr">
       <Header />
-      {/* orginal code 
-      <div id='search-wrapper' class='d-flex'>
-        <h2 class='search-heading'>Sky Map</h2>
+
+      <div id="search-wrapper" class="d-flex bg-wrapper">
+        <h2 class="search-heading">Constelation Maps </h2>
         <LocationSearchBar />
         <ConstellationsSearchBar
-        toggleModal={toggleModal}
-        isOpen={isModalOpen}
-        date={date}
-        setDate={setDate}
-        constelation={constelation}
-        setConstelation={setConstelation}
-      />
+          toggleModal={toggleModal}
+          isOpen={isModalOpen}
+          date={date}
+          setDate={setDate}
+          constelation={constelation}
+          setConstelation={setConstelation}
+        />
       </div>
+
+      <SearchHistory />
 
       <Modal
         isOpen={isModalOpen}
@@ -69,7 +71,6 @@ function App() {
           {/* <Route path="missions" element={<SpaceMissions />} /> call to space mission api ??*/}
       </Routes>
     </div>
-    
   );
 }
 

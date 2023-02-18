@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import StarPhoto from "./StarPhoto";
 
 const styles = {
+  header: { width: "100%" },
   img: { height: "clamp(1.7rem, 3.5vw, 4rem)" },
   nav: {
     marginLeft: "auto",
@@ -23,7 +24,7 @@ const styles = {
 
 const Header = () => {
   return (
-    <header>
+    <header style={styles.header}>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">

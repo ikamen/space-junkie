@@ -1,21 +1,24 @@
-.App {
-  text-align: center;
-  box-sizing: border-box;
-}
+/* Global Classes */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row,
+.column {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.column {
+  flex-direction: column;
+}
+
+.fx-an-cr {
+  align-items: center;
+}
+
+.fx-jy-cr {
+  justify-content: center;
+}
+
+.text-left {
+  text-align: left;
 }
 
 /* Bootstrap Navbar custom styles */
@@ -23,12 +26,8 @@
   color: white;
 }
 
-.btn {
-  width: 110px;
-}
-
 .date-picker {
-  background-color: rgba(54,69,79, 0.7);
+  background-color: rgba(54, 69, 79, 0.7);
 }
 
 .navbar-dark a:hover {
@@ -36,10 +35,16 @@
 }
 
 .btn {
+  width: 100%;
   color: white;
-  background-color: rgba(66, 54, 79, 0.8);
+  background-color: rgba(55, 20, 93, 0.8);
   border: none;
   margin: 10px auto;
+  padding: 1em;
+}
+
+.btn:hover {
+  background-color: rgba(79, 19, 143, 0.8);
 }
 /* Search bar */
 
@@ -50,7 +55,7 @@
 
 .date-picker {
   color: black;
-  background-color: rgba(255,255,255, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   margin-bottom: 15px;
   padding: 2px;
   border: none;
@@ -63,25 +68,45 @@
   margin-top: 10%;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 55%;
   align-items: middle;
   justify-content: center;
   padding: 50px 10%;
+  border-radius: 10px;
+}
+
+.bg-wrapper {
+  width: 55%;
+}
+
+@media (max-width: 1000px) {
+  .bg-wrapper {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .bg-wrapper {
+    width: 100%;
+  }
 }
 
 .search-heading {
-  margin:auto;
+  margin: auto;
   padding-bottom: 20px;
 }
 
+.search-history-wrapper {
+  margin-top: 1em;
+  padding: 1em;
+  color: white;
+  background-color: rgba(92, 92, 92, 0.661);
+  border-radius: 10px;
+  text-transform: capitalize;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-history-wrapper hr {
+  margin: 0.5em;
+  width: 97%;
 }
 
 /* modal inside portal */
