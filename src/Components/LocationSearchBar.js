@@ -27,7 +27,7 @@ function LocationSearchBar(props) {
         styles={customStyles}
         options={locations}
         onChange=""
-        placeholder="Choose observer location"
+        placeholder="Enter observer location"
         id="location-searchbar"
       />
     </>

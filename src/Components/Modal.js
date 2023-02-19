@@ -4,18 +4,19 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { getConstelationData } from "../apiCalls";
 import Constelation from "./Constelation";
 import styled from "styled-components";
+import { addToLocalStorage } from "./SearchHistory";
 
 const ContainerDiv = styled.div`
-    position: absolute;
-    max-width: 850px;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    margin-top: 100px;
-    // height: 90%;
-    width: 90%;
-    background-color: #36454F;
+  position: absolute;
+  max-width: 850px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 100px;
+  // height: 90%;
+  width: 90%;
+  background-color: #36454f;
 `;
 
 const Img = styled.img`
@@ -78,6 +79,36 @@ function Modal(props) {
     const lon = position.coords.longitude;
 
     getStarMap(hash, lat, lon, props.date, props.constelation.value);
+  };
+
+  const getStarMap = (hash, lat, lon, date, constelation) => {
+    const options = {
+      method: "POST",
+      // mode: 'no-cors',
+      headers: {
+        // 'Access-Control-Allow-Origin': '*',
+        "content-type": "application/json",
+        Authorization: `Basic ${hash}`,
+      },
+      body: `{"observer":{"date":"${date}","latitude":${lat},"longitude":${lon}},"style":"default","view":{"parameters":{"constellation":"${constelation}"},"type":"constellation"}}`,
+    };
+    fetch("https://api.astronomyapi.com/api/v2/studio/star-chart", options)
+      .then((res) => res.json())
+      .then((data) => {
+        setMap(data.data.imageUrl);
+        addToLocalStorage(
+          lat,
+          lon,
+          date,
+          props.constelation.label,
+          data.data.imageUrl
+        );
+        setLoading(false);
+      })
+      .then(() => {
+        console.log(props.constelation.label);
+        getConstelationData(props.constelation.label);
+      });
   };
 
   useEffect(() => {

@@ -56,6 +56,7 @@ function App() {
           setConstelation={setConstelation}
         />
       </div>
+      <AddressAutocomplete />
 
       <SearchHistory />
 
