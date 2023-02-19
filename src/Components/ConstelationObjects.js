@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ConstelationObject from "./ConstelationObject";
-import { constelationPlanets } from "../constelations-planets";
+import { constelationObjects } from "../constelation-objects";
 import styled from "styled-components"
 import { nasaData } from "../nasaData";
 
@@ -17,7 +17,7 @@ const ContainerDiv = styled.div`
 `
 
 export default function ConstelationObjects(props) {
-    const constellationArray = constelationPlanets.filter(obj => obj.constellation === props.constelation);
+    const constellationArray = constelationObjects.filter(obj => obj.constellation === props.constelation);
     const [currentIndex,setCurrentIndex] = useState(0);
     // console.log('Constelations array from constelation objects',constellationArray)
     

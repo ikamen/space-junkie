@@ -22,36 +22,58 @@
 .navbar-dark a {
   color: white;
 }
+
+.btn {
+  width: 110px;
+}
+
+.date-picker {
+  background-color: rgba(54,69,79, 0.7);
+}
+
 .navbar-dark a:hover {
   background-color: rgb(92, 92, 92);
 }
 
+.btn {
+  color: white;
+  background-color: rgba(66, 54, 79, 0.8);
+  border: none;
+  margin: 10px auto;
+}
 /* Search bar */
+
+.search-element {
+  margin-bottom: 15px;
+  padding: 2px;
+}
+
+.date-picker {
+  color: black;
+  background-color: rgba(255,255,255, 0.4);
+  margin-bottom: 15px;
+  padding: 2px;
+  border: none;
+}
+
 #search-wrapper {
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 10%;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  width: 45%;
+  width: 55%;
   align-items: middle;
   justify-content: center;
-  padding: 8%;
+  padding: 50px 10%;
 }
 
-#search-wrapper p {
-  margin: auto;
+.search-heading {
+  margin:auto;
   padding-bottom: 20px;
-  font-size: calc(7px + 2vmin);
 }
 
-#search-input {
-  margin: 10px, 5px;
-  /* width: 50%; */
-  align-items: center;
-  justify-content: center;
-}
 
 @keyframes App-logo-spin {
   from {
