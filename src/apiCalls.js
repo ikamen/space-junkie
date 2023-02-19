@@ -17,3 +17,4 @@ export const getConstelationData = (constelation) => {
         .catch(err => console.error(err));   
 }
 
+

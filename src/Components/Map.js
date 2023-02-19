@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export default function Map(props) {
     const [isInputEmpty,setInputEmpty] = useState(false)
-    console.log('props from map',props)
+    // console.log('props from map',props)
 
     const handleSubmit = () => {
         const constellationFound = constellations.filter(obj => obj.label === props.constelation.label);

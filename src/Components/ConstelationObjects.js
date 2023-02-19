@@ -2,42 +2,44 @@ import { useState } from "react";
 import ConstelationObject from "./ConstelationObject";
 import { constelationPlanets } from "../constelations-planets";
 import styled from "styled-components"
+import { nasaData } from "../nasaData";
 
 const ContainerDiv = styled.div`
-    border: 1px solid;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 20px;
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
     color: #fff;
-`
-
-const Button = styled.button`
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
+    padding: 10px;
 `
 
 export default function ConstelationObjects(props) {
     const constellationArray = constelationPlanets.filter(obj => obj.constellation === props.constelation);
     const [currentIndex,setCurrentIndex] = useState(0);
-    const constelationObject = constellationArray.map(obj => {
-        return <ConstelationObject name={obj.name}/>
-    })
-
+    // console.log('Constelations array from constelation objects',constellationArray)
+    
     const handleNext = () => {
-        setCurrentIndex(prev => prev + 1)
+        if(currentIndex < constellationArray.length-1) {
+            setCurrentIndex(prev => prev + 1);
+        }
     }
-
+    
     const handlePrev = () => {
-        setCurrentIndex(prev => prev - 1)
+        if(currentIndex > 0) {
+            setCurrentIndex(prev => prev - 1)
+        }
     }
+    
+    const constelationObject = constellationArray.map(obj => {
+        return <ConstelationObject key={obj.name} objectData={obj} handleNext={handleNext} handlePrev={handlePrev}/>
+    })
 
     return (
         <ContainerDiv>
-            <Button onClick={handlePrev}>prev</Button>
             {constelationObject[currentIndex]}
-            <Button onClick={handleNext}>next</Button>
         </ContainerDiv>
     )
 }

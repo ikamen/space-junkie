@@ -44,7 +44,7 @@ const Button = styled.button`
 
 
 function Modal(props) {
-    console.log(props)
+    // console.log(props)
     const [map, setMap] = useState('');
     const [isLoading, setLoading] = useState(true);
     const [color, setColor] = useState('#07336d')
@@ -80,7 +80,7 @@ function Modal(props) {
                 setLoading(false)
             })
             .then(() => {
-                console.log(props.constelation.label)
+                // console.log(props.constelation.label)
                 getConstelationData(props.constelation.label)
             })
     }
