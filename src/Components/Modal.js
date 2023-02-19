@@ -57,29 +57,6 @@ function Modal(props) {
     getStarMap(hash, lat, lon, props.date, props.constelation.value);
   };
 
-  const getStarMap = (hash, lat, lon, date, constelation) => {
-    const options = {
-      method: "POST",
-      // mode: 'no-cors',
-      headers: {
-        // 'Access-Control-Allow-Origin': '*',
-        "content-type": "application/json",
-        Authorization: `Basic ${hash}`,
-      },
-      body: `{"observer":{"date":"${date}","latitude":${lat},"longitude":${lon}},"style":"default","view":{"parameters":{"constellation":"${constelation}"},"type":"constellation"}}`,
-    };
-    fetch("https://api.astronomyapi.com/api/v2/studio/star-chart", options)
-      .then((res) => res.json())
-      .then((data) => {
-        setMap(data.data.imageUrl);
-        setLoading(false);
-      })
-      .then(() => {
-        console.log(props.constelation.label);
-        getConstelationData(props.constelation.label);
-      });
-  };
-
   useEffect(() => {
     setLoading(true);
     if (hasLoaded) {
