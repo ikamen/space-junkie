@@ -24853,3 +24853,5 @@ export function getSpaceObjectInfo(spaceObject) {
     })
     return spaceObjectData;
 }
+
+// TODO: if no information about the specific object display data for all constelation.
