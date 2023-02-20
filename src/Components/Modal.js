@@ -102,7 +102,7 @@ function Modal(props) {
 
     return (
         <>
-            {props.isOpen &&
+            {/* {props.isOpen &&
                 createPortal((
                     isLoading ? (
                         <ContainerDiv>
@@ -125,9 +125,11 @@ function Modal(props) {
                         </ContainerDiv>
                         )
                 ), document.getElementById('portal'))
-            }
+            } */}
         </>
     )
 }
 
 export default Modal;
+
+// display map in Celestial object component not like a modal, hide search bar, add button to unhide search bar

@@ -3,58 +3,80 @@ import React from "react";
 import DatePicker from "react-date-picker";
 import { constellations } from "../constelation-data";
 import Select from "react-select";
-import styled from "styled-components";
+import { PulseLoader } from "react-spinners";
 
 
 export default function ConstellationsSearchBar(props) {
-    const [isInputEmpty,setInputEmpty] = useState(false)
-    console.log('props from map',props)
+    const [color, setColor] = useState('#fff');
 
-    const handleSubmit = () => {
-        const constellationFound = constellations.filter(obj => obj.label === props.constelation.label);
-        if(!constellationFound.length) {
-            setInputEmpty(true)
-        } else {
-            props.toggleModal();
-            setInputEmpty(false);
-        }
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const label = constellations.filter(obj => obj.value === e.target.constellationName.value)[0].label;
+        props.setFormData({
+            constellationValue: e.target.constellationName.value,
+            constellationLabel: `${label}`,
+            date: e.target.date.value, 
+        })
+        props.setButtonDisabled(true);
+        props.setLoading(true);
+        props.setMapSelected(true)
+    }
+
+    const handleConstellationChange = () => {
+        props.setButtonDisabled(false);
+        props.setLoading(false);
     }
 
     const customStyles = {
         option: (defaultStyles, state) => ({
-          ...defaultStyles,
-          color: state.isSelected ? "white" : "#fff",
-          backgroundColor: state.isSelected ? '#36454F' : 'rgba(33,37,41,0.8)',
+            ...defaultStyles,
+            color: state.isSelected ? "white" : "#fff",
+            backgroundColor: state.isSelected ? '#36454F' : 'rgba(33,37,41,0.8)',
         }),
-    
+
         control: (defaultStyles) => ({
-          ...defaultStyles,
-          backgroundColor: 'rgba(33,37,41,0.8)',
-          border: "none",
-          boxShadow: "none"
+            ...defaultStyles,
+            backgroundColor: 'rgba(33,37,41,0.8)',
+            border: "none",
+            boxShadow: "none"
         }),
         singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
-      };
-    
+    };
 
     return (
         <>
-            {/* <h2 class='search-heading'>Constellation Map</h2> */}
-            
-            <Select
-            options={constellations}
-            styles={customStyles}
-            onChange={(e) => props.setConstelation({value: e.value,label: e.label})}
-            placeholder='Select a constellation'
-            className='search-element'/>
+            <form onSubmit={handleFormSubmit}>
+                <Select
+                    options={constellations}
+                    styles={customStyles}
+                    onChange={handleConstellationChange}
+                    placeholder='Select a constellation'
+                    className='search-element'
+                    name='constellationName'
+                />
 
-            <DatePicker
-            className = 'date-picker'
-            onChange={props.setDate} 
-            value={props.date}/>
+                <DatePicker
+                    className='date-picker'
+                    onChange={(e) => props.setDate(e)}
+                    value={props.date}
+                    name='date'
+                />
 
-            <button className="btn btn-dark" onClick={handleSubmit}>{props.isOpen ? 'Hide' : 'Show'} map</button>
-            {isInputEmpty && <p>Please choose from menu</p>}
+                <button className="btn btn-dark" disabled={props.isButtonDisabled} type="submit">
+                    {props.isLoading ? (
+                        <PulseLoader
+                            color={color}
+                            loading={props.isLoading}
+                            size={18}
+                            aria-label="Loading Spinner"
+                            speedMultiplier=".5"
+                        />
+                    ) : (
+                        'show map'
+                    )
+                    }
+                </button>
+            </form> 
         </>
     )
 }
