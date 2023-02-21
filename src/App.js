@@ -46,7 +46,7 @@ function App() {
 
       <div id="search-wrapper" class="d-flex bg-wrapper">
         <h2 class="search-heading">Constelation Maps </h2>
-        <LocationSearchBar />
+        <LocationSearchBar setObserverLatLong={setObserverLatLong} />
         <ConstellationsSearchBar
           toggleModal={toggleModal}
           isOpen={isModalOpen}
@@ -56,7 +56,6 @@ function App() {
           setConstelation={setConstelation}
         />
       </div>
-      <AddressAutocomplete />
 
       <SearchHistory />
 
@@ -65,7 +64,7 @@ function App() {
         toggleModal={toggleModal}
         date={moment(date).format("YYYY-MM-DD")}
         constelation={constelation}
-      /> */}
+      /> *
       <Routes>
         <Route path="/" element={<Home pictureOfDay={pictureOfDay} isPictureOfDayLoaded={isPictureOfDayLoaded}/>} /> 
         <Route path="celestial" element={<CelestialObjects />}/>

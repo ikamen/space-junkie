@@ -47,7 +47,6 @@
   background-color: rgba(79, 19, 143, 0.8);
 }
 /* Search bar */
-
 .search-element {
   margin-bottom: 15px;
   padding: 2px;
@@ -128,4 +127,8 @@
   height: 90vh;
   justify-content: center;
   align-items: center;
+}
+
+.css-qbdosj-Input {
+  color: white!important;
 }

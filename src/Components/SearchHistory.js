@@ -22,6 +22,18 @@ export function addToLocalStorage(lat, lon, date, constelation, imageUrl) {
   localStorage.setItem("searchHistory", JSON.stringify([...searchHistory]));
 }
 
+function SearchHistoryItem({ constelation, location, imageUrl, date }) {
+  return (
+    <div className="row fx-jy-cr text-left">
+      <img style={styles.searchHistoryItemImg} src={imageUrl} />
+      Map of: {constelation} Constelation <br />
+      Observing from: {location}.
+      <br /> Night: {date}
+      <hr />
+    </div>
+  );
+}
+
 const SearchHistory = () => {
   const searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
   const historyItems = [];
@@ -43,17 +55,5 @@ const SearchHistory = () => {
     </>
   );
 };
-
-function SearchHistoryItem({ constelation, location, imageUrl, date }) {
-  return (
-    <div className="row fx-jy-cr text-left">
-      <img style={styles.searchHistoryItemImg} src={imageUrl} />
-      Map of: {constelation} Constelation <br />
-      Observing from: {location}.
-      <br /> Night: {date}
-      <hr />
-    </div>
-  );
-}
 
 export default SearchHistory;
