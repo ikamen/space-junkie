@@ -227,7 +227,7 @@ export const constelationObjects = [
     apparent_magnitude: "6.04",
     absolute_magnitude: "0.82",
     distance_light_year: "361",
-    spectral_class: "G6III-IV",
+    spectral_class: "G6III−IV",
   },
   {
     name: "HD 194012",
@@ -817,7 +817,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.41",
     absolute_magnitude: "−0.61",
     distance_light_year: "522",
-    spectral_class: "B8II-IIIp..",
+    spectral_class: "B8II−IIIp..",
   },
   {
     name: "HD 175740",
@@ -897,7 +897,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.68",
     absolute_magnitude: "2.10",
     distance_light_year: "169",
-    spectral_class: "F1III-IV",
+    spectral_class: "F1III−IV",
   },
   {
     name: "Fomalhaut",
@@ -1707,7 +1707,7 @@ export const constelationObjects = [
     apparent_magnitude: "6.27",
     absolute_magnitude: "1.08",
     distance_light_year: "355",
-    spectral_class: "A2III-IV",
+    spectral_class: "A2III−IV",
   },
   {
     name: "V340 Sge",
@@ -1717,7 +1717,7 @@ export const constelationObjects = [
     apparent_magnitude: "6.37",
     absolute_magnitude: "−2.87",
     distance_light_year: "2296",
-    spectral_class: "M0Iab-Ib SB",
+    spectral_class: "M0Iab−Ib SB",
   },
   {
     name: "V344 Sge",
@@ -1937,7 +1937,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.63",
     absolute_magnitude: "1.13",
     distance_light_year: "259",
-    spectral_class: "B9IV-V",
+    spectral_class: "B9IV−V",
   },
   {
     name: "HD 11007",
@@ -2037,7 +2037,7 @@ export const constelationObjects = [
     apparent_magnitude: "6.32",
     absolute_magnitude: "0.57",
     distance_light_year: "460",
-    spectral_class: "G8III-IV SB",
+    spectral_class: "G8III−IV SB",
   },
   {
     name: "HD 13747",
@@ -2657,7 +2657,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.51",
     absolute_magnitude: "−2.96",
     distance_light_year: "1614",
-    spectral_class: "K3II-III",
+    spectral_class: "K3II−III",
   },
   {
     name: "18 Vul",
@@ -3117,7 +3117,7 @@ export const constelationObjects = [
     apparent_magnitude: "3.35",
     absolute_magnitude: "−0.40",
     distance_light_year: "184",
-    spectral_class: "G4II-III",
+    spectral_class: "G4II−III",
   },
   {
     name: "λ UMa",
@@ -3247,7 +3247,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.54",
     absolute_magnitude: "1.99",
     distance_light_year: "106",
-    spectral_class: "G4III-IV",
+    spectral_class: "G4III−IV",
   },
   {
     name: "φ UMa",
@@ -3437,7 +3437,7 @@ export const constelationObjects = [
     apparent_magnitude: "3.47",
     absolute_magnitude: "−2.57",
     distance_light_year: "527",
-    spectral_class: "B2IV-Ve",
+    spectral_class: "B2IV−Ve",
   },
   {
     name: "φ Cen",
@@ -3467,7 +3467,7 @@ export const constelationObjects = [
     apparent_magnitude: "3.87",
     absolute_magnitude: "−1.67",
     distance_light_year: "417",
-    spectral_class: "B2IV-V",
+    spectral_class: "B2IV−V",
   },
   {
     name: "π Cen",
@@ -3607,7 +3607,7 @@ export const constelationObjects = [
     apparent_magnitude: "1.97",
     absolute_magnitude: "−3.64",
     distance_light_year: "431",
-    spectral_class: "F7:Ib-IIv SB",
+    spectral_class: "F7:Ib−IIv SB",
   },
   {
     name: "β UMi",
@@ -3627,7 +3627,7 @@ export const constelationObjects = [
     apparent_magnitude: "3.04",
     absolute_magnitude: "−2.84",
     distance_light_year: "480",
-    spectral_class: "A3II-III",
+    spectral_class: "A3II−III",
   },
   {
     name: "ε UMi",
@@ -3907,7 +3907,7 @@ export const constelationObjects = [
     apparent_magnitude: "2.24",
     absolute_magnitude: "−1.99",
     distance_light_year: "228",
-    spectral_class: "K0II-IIIvar",
+    spectral_class: "K0II−IIIvar",
   },
   {
     name: "β Cas",
@@ -3917,7 +3917,7 @@ export const constelationObjects = [
     apparent_magnitude: "2.28",
     absolute_magnitude: "1.17",
     distance_light_year: "54",
-    spectral_class: "F2III-IV",
+    spectral_class: "F2III−IV",
   },
   {
     name: "γ Cas",
@@ -4037,7 +4037,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.51",
     absolute_magnitude: "−9.5",
     distance_light_year: "8500",
-    spectral_class: "F8Ia0-M2I",
+    spectral_class: "F8Ia0−M2I",
   },
   {
     name: "υ2 Cas",
@@ -4047,7 +4047,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.62",
     absolute_magnitude: "0.62",
     distance_light_year: "206",
-    spectral_class: "G8III-IV",
+    spectral_class: "G8III−IV",
   },
   {
     name: "χ Cas",
@@ -4107,7 +4107,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.80",
     absolute_magnitude: "",
     distance_light_year: "410",
-    spectral_class: "M6.5-9e",
+    spectral_class: "M6.5−9e",
   },
   {
     name: "υ1 Cas",
@@ -4207,7 +4207,7 @@ export const constelationObjects = [
     apparent_magnitude: "2.45",
     absolute_magnitude: "1.58",
     distance_light_year: "49",
-    spectral_class: "A7IV-V",
+    spectral_class: "A7IV−V",
   },
   {
     name: "γ Cep",
@@ -4267,7 +4267,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.07",
     absolute_magnitude: "−3.47",
     distance_light_year: "887",
-    spectral_class: "F5Iab + B7-8",
+    spectral_class: "F5Iab + B7−8",
   },
   {
     name: "ε Cep",
@@ -4307,7 +4307,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.24",
     absolute_magnitude: "−0.67",
     distance_light_year: "313",
-    spectral_class: "K2II-III",
+    spectral_class: "K2II−III",
   },
   {
     name: "ν Cep",
@@ -4357,7 +4357,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.52",
     absolute_magnitude: "2.35",
     distance_light_year: "88",
-    spectral_class: "F8IV-V",
+    spectral_class: "F8IV−V",
   },
   {
     name: "11 Cep",
@@ -4477,7 +4477,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.08",
     absolute_magnitude: "1.32",
     distance_light_year: "184",
-    spectral_class: "F3III-IV",
+    spectral_class: "F3III−IV",
   },
   {
     name: "HD 30338",
@@ -5337,7 +5337,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.72",
     absolute_magnitude: "0.63",
     distance_light_year: "340",
-    spectral_class: "G8III-IV",
+    spectral_class: "G8III−IV",
   },
   {
     name: "8 Lac A",
@@ -5397,7 +5397,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.84",
     absolute_magnitude: "2.21",
     distance_light_year: "173",
-    spectral_class: "F0III-IV",
+    spectral_class: "F0III−IV",
   },
   {
     name: "46 LMi",
@@ -5407,7 +5407,7 @@ export const constelationObjects = [
     apparent_magnitude: "3.79",
     absolute_magnitude: "1.41",
     distance_light_year: "98",
-    spectral_class: "K0III-IV",
+    spectral_class: "K0III−IV",
   },
   {
     name: "β LMi",
@@ -5417,7 +5417,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.20",
     absolute_magnitude: "0.95",
     distance_light_year: "146",
-    spectral_class: "G8III-IV",
+    spectral_class: "G8III−IV",
   },
   {
     name: "21 LMi",
@@ -5507,7 +5507,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.39",
     absolute_magnitude: "5.16",
     distance_light_year: "36",
-    spectral_class: "G8IV-V",
+    spectral_class: "G8IV−V",
   },
   {
     name: "8 LMi",
@@ -5745,7 +5745,7 @@ export const constelationObjects = [
     right_ascension: "05h 40m 45.52s",
     declination: "−01° 56′ 33.3″",
     apparent_magnitude: "1.88",
-    absolute_magnitude: "-6.0",
+    absolute_magnitude: "−6.0",
     distance_light_year: "817",
     spectral_class: "O9.7Ib",
   },
@@ -5765,7 +5765,7 @@ export const constelationObjects = [
     right_ascension: "05h 32m 00.40s",
     declination: "−00° 17′ 56.7″",
     apparent_magnitude: "2.20",
-    absolute_magnitude: "-5.8",
+    absolute_magnitude: "−5.8",
     distance_light_year: "916",
     spectral_class: "B0III+O9V",
   },
@@ -5805,7 +5805,7 @@ export const constelationObjects = [
     right_ascension: "05h 35m 08.28s",
     declination: "+09° 56′ 03.0″",
     apparent_magnitude: "3.47",
-    absolute_magnitude: "-4.25",
+    absolute_magnitude: "−4.25",
     distance_light_year: "1055",
     spectral_class: "O8III",
   },
@@ -5835,7 +5835,7 @@ export const constelationObjects = [
     right_ascension: "05h 40m 45.60s",
     declination: "−01° 56′ 34.0″",
     apparent_magnitude: "3.70",
-    absolute_magnitude: "-3.29",
+    absolute_magnitude: "−3.29",
     distance_light_year: "817",
     spectral_class: "B0III+B1IV",
   },
@@ -5877,7 +5877,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.09",
     absolute_magnitude: "1.33",
     distance_light_year: "116",
-    spectral_class: "G8III-IV",
+    spectral_class: "G8III−IV",
   },
   {
     name: "μ Ori",
@@ -6007,7 +6007,7 @@ export const constelationObjects = [
     apparent_magnitude: "0.91",
     absolute_magnitude: "−5.24",
     distance_light_year: "553",
-    spectral_class: "M1.5Iab-b",
+    spectral_class: "M1.5Iab−b",
   },
   {
     name: "λ Sco",
@@ -6217,7 +6217,7 @@ export const constelationObjects = [
     apparent_magnitude: "4.24",
     absolute_magnitude: "−2.56",
     distance_light_year: "746",
-    spectral_class: "B2III-IV",
+    spectral_class: "B2III−IV",
   },
   {
     name: "Q Sco",
@@ -6417,7 +6417,7 @@ export const constelationObjects = [
     apparent_magnitude: "5.23",
     absolute_magnitude: "−1.00",
     distance_light_year: "574",
-    spectral_class: "G8II-III",
+    spectral_class: "G8II−III",
   },
   {
     name: "σ3 Cnc",

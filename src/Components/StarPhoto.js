@@ -11,13 +11,17 @@ const styles = {
 const StarPhoto = ({ Ra, Dec }) => {
   const [imageData, setImageData] = useState(null);
 
-  //Remove all letters and replace spaces with + symbol
-  const ra = Ra.replace(/[^\d.\s]/g, "").replace(/\s+/g, "+");
-  const dec = Dec.replace(/[^\d.\s]/g, "").replace(/\s+/g, "+");
+  if (Ra && Dec) {
+    Ra = Ra.replace(/[^−\d.\s]+/g, "")
+      .replace(/\s+/g, "+")
+      .replace("−", "-");
 
-  console.log(ra);
-  console.log(dec);
-  const imageUrl = `https://archive.stsci.edu/cgi-bin/dss_search?v=quickv&r=${ra}&d=%2B${dec}&e=J2000&h=4&w=4&f=gif&c=none&fov=NONE&v3=`;
+    Dec = Dec.replace(/[^−\d.\s]+/g, "")
+      .replace(/\s+/g, "+")
+      .replace("−", "-");
+  }
+
+  const imageUrl = `https://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_ir&r=${Ra}&d=${Dec}&e=J2000&h=12.0&w=12.0&f=gif&c=none&fov=NONE&v3=`;
 
   useEffect(() => {
     async function fetchImageData() {
