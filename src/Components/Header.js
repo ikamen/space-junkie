@@ -18,7 +18,7 @@ const styles = {
     fontSize: "clamp(1rem, 1.5vw, 4rem)",
     alignItems: "center",
     color: "white",
-    textDecoration: "none"
+    textDecoration: "none",
   },
 };
 
@@ -34,10 +34,11 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav style={{ ...styles.nav, ...styles.navLink }}>
               {/* <Nav.Link href="#home">Home</Nav.Link> */}
-              <Link style={styles.navLink} to="/">Home</Link>
+              <Link style={styles.navLink} to="/">
+                Home
+              </Link>
               {/* <Nav.Link href="#home">Celestial Objects</Nav.Link> */}
               <Link to="/celestial">Celestial Objects</Link>
-              <Nav.Link href="#home">Space Missions</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

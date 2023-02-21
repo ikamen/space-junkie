@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import starIcon from "../images/star.svg";
 
 const styles = {
-  img: { height: "5rem", width: "5rem", borderRadius: "50%" },
+  img: { height: "10rem", width: "10rem" },
 };
 
 //Get a Photo of the Stellar Object using Right Ascension and Declination
@@ -14,7 +14,10 @@ const StarPhoto = ({ Ra, Dec }) => {
   //Remove all letters and replace spaces with + symbol
   const ra = Ra.replace(/[^\d.\s]/g, "").replace(/\s+/g, "+");
   const dec = Dec.replace(/[^\d.\s]/g, "").replace(/\s+/g, "+");
-  const imageUrl = `https://archive.stsci.edu/cgi-bin/dss_search?v=quickv&r=${ra}&d=%2B${dec}&e=J2000&h=10&w=10&f=gif&c=none&fov=NONE&v3=`;
+
+  console.log(ra);
+  console.log(dec);
+  const imageUrl = `https://archive.stsci.edu/cgi-bin/dss_search?v=quickv&r=${ra}&d=%2B${dec}&e=J2000&h=4&w=4&f=gif&c=none&fov=NONE&v3=`;
 
   useEffect(() => {
     async function fetchImageData() {
