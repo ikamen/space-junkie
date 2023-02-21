@@ -4,7 +4,13 @@ import { useState } from "react";
 
 const Wrapper = styled.div`
     background-color: rgb(0,0,0,0.4);
-    border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    // border: 5px solid red;
+    fonct-size: 1.2rem;
 `
 
 const Title = styled.h3`
@@ -28,12 +34,15 @@ function Home(props) {
         setExplanation(prev => !prev);
     }
 
-    // console.log('props from home',props)
     return (
-        <Wrapper>
-            <Title>{props.pictureOfDay.title} <Button onClick={handleClick}>see more ....</Button></Title>
-            {isExplanation && <Paragraph>${props.pictureOfDay.explanation} <Button onClick={handleClick}>Hide</Button></Paragraph>}            
-        </Wrapper>
+        <>
+        { props.isPictureOfDayLoaded &&
+            <Wrapper>
+                <Title>{props.pictureOfDay.title} {!isExplanation && <Button onClick={handleClick}>see more ....</Button>}</Title>
+                {isExplanation && <Paragraph>{props.pictureOfDay.explanation} <Button onClick={handleClick}>Hide</Button></Paragraph>}            
+            </Wrapper>
+        }
+    </>
     )
 }
 

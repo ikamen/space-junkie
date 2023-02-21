@@ -4,6 +4,7 @@ import { constelationObjects } from "../constelation-objects";
 import styled from "styled-components"
 import { nasaData } from "../nasaData";
 import { getSpaceObjectInfo } from "../nasaData";
+import PicturesModal from "./PicturesModal";
 
 const ContainerDiv = styled.div`
     position: absolute;
@@ -24,10 +25,16 @@ const ContainerDiv = styled.div`
 `
 
 export default function ConstelationObjects(props) {
-    const constellationArray = constelationObjects.filter(obj => obj.constellation === props.constelation);
+    let constellationArray = constelationObjects.filter(obj => obj.constellation === props.constelation);
+    let [isConstellationData,setConstellationData] = useState(false)
     const [currentIndex,setCurrentIndex] = useState(0);
-    // console.log('Constelations array from constelation objects',constellationArray)
+  
     
+    if(!constellationArray.length) {
+        constellationArray = getSpaceObjectInfo(props.constelation);
+    }
+
+
     const handleNext = () => {
         if(currentIndex < constellationArray.length-1) {
             setCurrentIndex(prev => prev + 1);
@@ -42,7 +49,7 @@ export default function ConstelationObjects(props) {
     
     const constelationObject = constellationArray.map(obj => {
         // const objectsInConstelation = getSpaceObjectInfo(obj.name);
-        return <ConstelationObject key={obj.name} objectData={obj} handleNext={handleNext} handlePrev={handlePrev} name={obj.name} isLoading={props.isLoading} />
+        return <ConstelationObject key={obj.name} objectData={obj} constellation={props.constelation} handleNext={handleNext} handlePrev={handlePrev} name={obj.name} isLoading={props.isLoading} />
     })
 
     return (

@@ -19,7 +19,6 @@ const P = styled.p`
 `
 
 function Constelation(props) {
-    // console.log(props.date)
 
     return (
         <ContainerDiv>

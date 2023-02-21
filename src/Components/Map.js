@@ -61,11 +61,10 @@ function Map(props) {
                 props.setButtonDisabled(true);
                 props.setLoading(false);
             })
-            .then(() => {
-                // console.log(props.constelation.label)
-                getConstelationData(props.formData.constellationLabel)
+            // .then(() => {
+            //     getConstelationData(props.formData.constellationLabel)
                 
-            })
+            // })
     }
 
     const getUserLocation = (position) => {
@@ -81,7 +80,6 @@ function Map(props) {
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(getUserLocation)
-        console.log('effect form map')
     },[props.formData]);
 
     return (

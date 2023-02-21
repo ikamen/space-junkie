@@ -9,10 +9,10 @@ export const getConstelationData = (constelation) => {
     fetch(`https://api.api-ninjas.com/v1/stars?constellation=${constelation}`, options)
         .then(response => response.json())
         .then(data => {
-            if(data.length) {
-                console.log('data from constelation',data)}
-            else {
-                console.log('no data for',constelation)
+        if(data.length) {
+            console.log('data from constelation',data)}
+        else {
+            console.log('no data for',constelation)
             }})
         .catch(err => console.error(err));   
 }

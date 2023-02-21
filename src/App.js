@@ -16,6 +16,7 @@ function App() {
   //   value: "",
   //   label: "",
   // });
+  const [isPictureOfDayLoaded,setPictureOfDayLoaded] = useState(false)
   const [pictureOfDay,setPictureOfDay] = useState({})
   // const [isModalOpen, setModalOpen] = useState(false);
   // const toggleModal = () => setModalOpen(!isModalOpen);
@@ -35,6 +36,7 @@ function App() {
         //Set the background property of the body tag to the returned image
         document.body.style.setProperty('background-image', `url(${data.url})`);
         setPictureOfDay(data)
+        setPictureOfDayLoaded(true)
     })
   }, []);
 
@@ -62,7 +64,7 @@ function App() {
         constelation={constelation}
       /> */}
       <Routes>
-        <Route path="/" element={<Home pictureOfDay={pictureOfDay} />} /> 
+        <Route path="/" element={<Home pictureOfDay={pictureOfDay} isPictureOfDayLoaded={isPictureOfDayLoaded}/>} /> 
         <Route path="celestial" element={<CelestialObjects />}/>
           {/* <Route path="missions" element={<SpaceMissions />} /> call to space mission api ??*/}
       </Routes>

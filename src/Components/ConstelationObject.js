@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { getSpaceObjectInfo } from "../nasaData";
+import PicturesModal from "./PicturesModal";
 
 const PlanetHeader = styled.div`
     // border: 1px solid #fff;
@@ -36,12 +36,16 @@ const Button = styled.button`
 `
 
 export default function ConstelationObject(props) {
-    console.log('is loading from constelation object component', props.isLoading)
-    console.log(getSpaceObjectInfo(props.objectData.name))
+    const [isModalOpen, setModalOpen] = useState(false);
+    const handleButtonClick = () => {
+       
+        setModalOpen(true);
+    }
+
     return (
-            <>
+        <>
             {!props.isLoading &&
-            <>
+            <> 
                 <PlanetHeader>
                     <Button onClick={props.handlePrev}>&lt; prev</Button>
                     <Paragraph>{props.objectData.name}</Paragraph>
@@ -55,11 +59,11 @@ export default function ConstelationObject(props) {
                     <p>Apparent magnitude: {props.objectData.apparent_magnitude}</p>
                     <p>Distance in light years {props.objectData.distance_light_year}</p>
                     <p>Spectral class {props.objectData.spectral_class}</p>
-                    <button>show more</button>
                 </PlanetInfo>
-                </>
-            }
             </>
-
+            }
+            <button onClick={handleButtonClick}>show more</button>
+            <PicturesModal isOpen={isModalOpen} setModal={setModalOpen} obj={props.objectData} nameOfObject={props.objectData.name} nameOfConstelation={props.constellation}/>
+        </>
     )
 }
