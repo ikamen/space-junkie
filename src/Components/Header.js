@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../images/logoHQ.svg";
+import { Link } from "react-router-dom";
 import StarPhoto from "./StarPhoto";
 
 const styles = {
@@ -16,6 +17,7 @@ const styles = {
     fontSize: "clamp(1rem, 1.5vw, 4rem)",
     alignItems: "center",
     color: "white",
+    textDecoration: "none"
   },
 };
 
@@ -30,8 +32,10 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav style={{ ...styles.nav, ...styles.navLink }}>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#home">Celestial Objects</Nav.Link>
+              {/* <Nav.Link href="#home">Home</Nav.Link> */}
+              <Link style={styles.navLink} to="/">Home</Link>
+              {/* <Nav.Link href="#home">Celestial Objects</Nav.Link> */}
+              <Link to="/celestial">Celestial Objects</Link>
               <Nav.Link href="#home">Space Missions</Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -19,12 +19,11 @@ const P = styled.p`
 `
 
 function Constelation(props) {
-    console.log(props.date)
 
     return (
         <ContainerDiv>
             <Title>Discover the objects in {props.constelation} constellation on {props.date}</Title>
-            <ConstelationObjects constelation={props.constelation} />
+             <ConstelationObjects constelation={props.constelation} />
         </ContainerDiv>
     )
 }   

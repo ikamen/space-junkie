@@ -15,6 +15,7 @@ function nasaImage() {
     .then(data => {
         //Set the background property of the body tag to the returned image
         document.body.style.setProperty('background-image', `url(${data.url})`)
+        return data;
     })
    
   }
