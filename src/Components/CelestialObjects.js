@@ -40,7 +40,8 @@ function CelestialObjects(props) {
                 constelation={constelation}
             /> */}
             {isMapSelected && 
-                <Map 
+                <Map
+                    isLoading={isLoading}
                     mapSelected={isMapSelected}
                     formData={formData}
                     date={moment(date).format("YYYY-MM-DD")}

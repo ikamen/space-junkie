@@ -24846,10 +24846,8 @@ export const nasaData = [
 ]
 
 export function getSpaceObjectInfo(spaceObject) {
-    // console.log(spaceObject);
-    let regEx = /`${spaceObject}`/i;
     const spaceObjectData = nasaData.filter(obj => {
-        return regEx.test(obj.explanation)
+        return obj.explanation.split(' ').includes(spaceObject);
     })
     return spaceObjectData;
 }

@@ -3,17 +3,24 @@ import ConstelationObject from "./ConstelationObject";
 import { constelationObjects } from "../constelation-objects";
 import styled from "styled-components"
 import { nasaData } from "../nasaData";
+import { getSpaceObjectInfo } from "../nasaData";
 
 const ContainerDiv = styled.div`
-    box-sizing: border-box;
-    border: 1px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    max-width: 1200px;
+    // box-sizing: border-box;
+    // border: 1px solid #fff;
     border-radius: 10px;
-    margin: 20px;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
-    width: 100%;
     color: #fff;
-    padding: 10px;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    background-color: rgba(0,0,0,0.1)
 `
 
 export default function ConstelationObjects(props) {
@@ -29,12 +36,13 @@ export default function ConstelationObjects(props) {
     
     const handlePrev = () => {
         if(currentIndex > 0) {
-            setCurrentIndex(prev => prev - 1)
+            setCurrentIndex(prev => prev - 1);
         }
     }
     
     const constelationObject = constellationArray.map(obj => {
-        return <ConstelationObject key={obj.name} objectData={obj} handleNext={handleNext} handlePrev={handlePrev}/>
+        // const objectsInConstelation = getSpaceObjectInfo(obj.name);
+        return <ConstelationObject key={obj.name} objectData={obj} handleNext={handleNext} handlePrev={handlePrev} name={obj.name} isLoading={props.isLoading} />
     })
 
     return (

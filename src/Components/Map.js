@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
-
 import styled from "styled-components";
 import { getConstelationData } from "../apiCalls";
-
+import ConstelationObjects from "./ConstelationObjects";
 
 const ContainerDiv = styled.div`
-    // position: absolute;
-    max-width: 850px;
+    position: relative;
+    max-width: 1200px;
     top: 0;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: 0 auto;
     // margin-top: 0;
     // height: 90%;
     width: 90%;
-    background-color: #36454F;
+    background-color: rgba(0,0,0,0.2);
 `;
 
 const Img = styled.img`
   display: block;
   max-width: 1200px;
-  width: 95%;
+  width: 100%;
   margin: 10px auto;
   margin-bottom: 0;
   position: relative;
@@ -41,11 +40,8 @@ const Button = styled.button`
 `;
 
 function Map(props) {
-    console.log('props from map component', props);
     const [mapUrl, setMapUrl] = useState('');
-    const [isLoading, setLoading] = useState(false);
-    // const [color, setColor] = useState('#07336d')
-    const [hasLoaded, setHasLoaded] = useState(false);
+
 
     const getStarMap = (hash, lat, lon, date, constelation) => {
         const options = {
@@ -67,7 +63,8 @@ function Map(props) {
             })
             .then(() => {
                 // console.log(props.constelation.label)
-                getConstelationData(props.formData.constelationLabel)
+                getConstelationData(props.formData.constellationLabel)
+                
             })
     }
 
@@ -83,17 +80,15 @@ function Map(props) {
     };
 
     useEffect(() => {
-        if(hasLoaded) {
-            navigator.geolocation.getCurrentPosition(getUserLocation)
-            console.log('effect form map')
-        }
-        setHasLoaded(true)
-    },[props.formData,hasLoaded]);
+        navigator.geolocation.getCurrentPosition(getUserLocation)
+        console.log('effect form map')
+    },[props.formData]);
 
     return (
-        <>  
+        <ContainerDiv>  
             <Img src={mapUrl} />
-        </>
+            <ConstelationObjects constelation={props.formData.constellationLabel} isLoading={props.isLoading} />
+        </ContainerDiv>
     )
 }
 
