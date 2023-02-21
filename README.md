@@ -17,7 +17,7 @@ A React application for Project 2 of the Bootcamp - shows a map of the night sky
 ## User Story
 ```
 AS A stargazer
-I WANT to be able to view all the ovservable stars and planets based on a date and a location or view cpecific constellations
+I WANT to be able to view all the ovservable stars and planets based on a date and a location or view specific constellations
 SO THAT I can pinpoint distant cosmic objects in the night sky easier and plan ahead to decide when to do my stargazing
 ```
 
