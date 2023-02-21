@@ -16,7 +16,7 @@ function CelestialObjects(props) {
     return (
         <>
             <div id='search-wrapper' className='d-flex'>
-                <h2 className='search-heading'>Sky Map</h2>
+                <h2 className='search-heading'>Star Maps</h2>
                 <LocationSearchBar />
                 <ConstellationsSearchBar
                     toggleMap={toggleMap}

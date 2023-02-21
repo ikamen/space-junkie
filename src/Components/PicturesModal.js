@@ -5,7 +5,7 @@ import { getSpaceObjectInfo } from "../nasaData";
 import Picture from "./Picture";
 
 const ModalOverlay = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     rigth: 0x;
@@ -20,7 +20,6 @@ const ModalOverlay = styled.div`
     background-size: cover;
     background-position: center;
     display: flex;
-    
     align-items: flex-end;
 `
 

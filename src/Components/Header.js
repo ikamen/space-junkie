@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import StarPhoto from "./StarPhoto";
 
 const styles = {
+  header: { width: "100%" },
   img: { height: "clamp(1.7rem, 3.5vw, 4rem)" },
   nav: {
     marginLeft: "auto",
@@ -17,13 +18,13 @@ const styles = {
     fontSize: "clamp(1rem, 1.5vw, 4rem)",
     alignItems: "center",
     color: "white",
-    textDecoration: "none"
+    textDecoration: "none",
   },
 };
 
 const Header = () => {
   return (
-    <header>
+    <header style={styles.header}>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">
@@ -33,10 +34,11 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav style={{ ...styles.nav, ...styles.navLink }}>
               {/* <Nav.Link href="#home">Home</Nav.Link> */}
-              <Link style={styles.navLink} to="/">Home</Link>
+              <Link style={styles.navLink} to="/">
+                Home
+              </Link>
               {/* <Nav.Link href="#home">Celestial Objects</Nav.Link> */}
               <Link to="/celestial">Celestial Objects</Link>
-              <Nav.Link href="#home">Space Missions</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
