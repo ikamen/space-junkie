@@ -43,7 +43,6 @@ const StarPhoto = ({ Ra, Dec }) => {
     setZoom(zoom - 2);
   };
 
-  // const imageUrl = `https://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_ir&r=${Ra}&d=${Dec}&e=J2000&h=${zoom}.0&w=${zoom}.0&f=gif&c=none&fov=NONE&v3=`;
   const imageUrl =
     photoMode === "Standart"
       ? `https://archive.stsci.edu/cgi-bin/dss_search?v=phase2_gsc2&r=${Ra}&d=${Dec}&e=J2000&h=${zoom}.0&w=${zoom}.0&f=gif&c=none&fov=NONE&v3=`
