@@ -13,7 +13,9 @@ const ContainerDiv = styled.div`
     right: 0;
     margin: 0 auto;
     width: 90%;
-    // background-color: rgba(0,0,0,0.2);
+    background: rgb(0,0,0,0.4)
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 1px #666;
 `;
 
 const ImageWrapper = styled.div`
