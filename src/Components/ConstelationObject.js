@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import PicturesModal from "./PicturesModal";
 import StarPhoto from "./StarPhoto";
+import { getSpaceObjectInfo } from "../nasaData";
 
 const PlanetHeader = styled.div`
   // border: 1px solid #fff;
@@ -48,6 +49,12 @@ const Button = styled.button`
 
 export default function ConstelationObject(props) {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isDataFromNasa,setDataFromNasa] = useState(false);
+
+  useEffect(() => {
+    setDataFromNasa(getSpaceObjectInfo(props.constellation).length)
+  },[])
+
   const handleButtonClick = () => {
     setModalOpen(true);
   };
@@ -83,13 +90,14 @@ export default function ConstelationObject(props) {
           )}
         </>
       )}
-      {!isModalOpen && <button className='btn btn-dark' onClick={handleButtonClick}>Show More</button>}
+      {(!isModalOpen && isDataFromNasa) && <button className='btn btn-dark' onClick={handleButtonClick}>Show More</button>}
       <PicturesModal
         isOpen={isModalOpen}
         setModal={setModalOpen}
         obj={props.objectData}
         nameOfObject={props.objectData.name}
         nameOfConstelation={props.constellation}
+        setDataFromNasa={setDataFromNasa}
       />
     </>
   );
