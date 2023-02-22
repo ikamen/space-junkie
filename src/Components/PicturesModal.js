@@ -144,7 +144,7 @@ function PicturesModal(props) {
                                 <ImageContainer>
                                     <Img src={objectInfo[currentPictureIndex].hdurl} />
                                 </ImageContainer>
-                                <ModalTitle>{props.nameOfObject}</ModalTitle>
+                                {/* <ModalTitle>{props.nameOfObject}</ModalTitle> */}
                                 {picture[currentPictureIndex]}
                                 <ModalButton onClick={handleButtonClick}>X</ModalButton>
                             </ModalContainer>
