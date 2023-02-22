@@ -12,7 +12,7 @@ const customStyles = {
     ...defaultStyles,
     padding: '6px',
     backgroundColor: 'rgba(33,37,41,0.8)',
-    border: "solid",
+    border: "0.5 solid",
   }),
 
   input: (defaultStyles) => ({
