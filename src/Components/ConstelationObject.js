@@ -16,9 +16,15 @@ const PlanetHeader = styled.div`
 
 const PlanetInfo = styled.div`
   display: flex;
+  // background: #fff;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 1rem;
+  
+  @media(min-width: 700px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -27,6 +33,10 @@ const Paragraph = styled.p`
   // width: 100%;
   margin: 0;
 `;
+
+const InfoWrapper = styled.div`
+  
+`
 
 const Button = styled.button`
   background: none;
@@ -59,15 +69,15 @@ export default function ConstelationObject(props) {
                   Ra={props.objectData.right_ascension}
                   Dec={props.objectData.declination}
                 />
-                <p>Constellation: {props.objectData.constellation}</p>
-                <p>Right ascension: {props.objectData.right_ascension}</p>
-                <p>Declination: {props.objectData.declination}</p>
-                <p>Absolute magnitude: {props.objectData.absolute_magnitude}</p>
-                <p>Apparent magnitude: {props.objectData.apparent_magnitude}</p>
-                <p>
-                  Distance in light years {props.objectData.distance_light_year}
-                </p>
-                <p>Spectral class {props.objectData.spectral_class}</p>
+                <InfoWrapper>
+                  <p>Constellation: {props.objectData.constellation}</p>
+                  <p>Right ascension: {props.objectData.right_ascension}</p>
+                  <p>Declination: {props.objectData.declination}</p>
+                  <p>Absolute magnitude: {props.objectData.absolute_magnitude}</p>
+                  <p>Apparent magnitude: {props.objectData.apparent_magnitude}</p>
+                  <p>Distance in light years {props.objectData.distance_light_year}</p>
+                  <p>Spectral class {props.objectData.spectral_class}</p>
+                </InfoWrapper>
               </PlanetInfo>
             </>
           )}
