@@ -53,9 +53,9 @@ export default function ConstellationsSearchBar(props) {
 
     control: (defaultStyles) => ({
       ...defaultStyles,
-      backgroundColor: "rgba(33,37,41,0.8)",
-      border: "none",
-      boxShadow: "none",
+      padding: '6px',
+      backgroundColor: 'rgba(33,37,41,0.8)',
+      border: " 0.5 solid",
     }),
     input: (defaultStyles) => ({
       ...defaultStyles,
@@ -97,7 +97,7 @@ export default function ConstellationsSearchBar(props) {
         />
 
         <button
-          className="btn btn-dark"
+          className="btn border btn-dark"
           disabled={props.isButtonDisabled}
           type="submit"
         >
@@ -105,12 +105,12 @@ export default function ConstellationsSearchBar(props) {
             <PulseLoader
               color={color}
               loading={props.isLoading}
-              size={18}
+              size={15}
               aria-label="Loading Spinner"
               speedMultiplier=".5"
             />
           ) : (
-            "show map"
+            "Show Map"
           )}
         </button>
       </form>
