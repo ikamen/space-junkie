@@ -83,7 +83,7 @@ export default function ConstelationObject(props) {
           )}
         </>
       )}
-      {!isModalOpen && <button onClick={handleButtonClick}>show more</button>}
+      {!isModalOpen && <button className='btn btn-dark' onClick={handleButtonClick}>Show More</button>}
       <PicturesModal
         isOpen={isModalOpen}
         setModal={setModalOpen}
