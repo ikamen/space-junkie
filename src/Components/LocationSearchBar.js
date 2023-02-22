@@ -10,10 +10,11 @@ const customStyles = {
 
   control: (defaultStyles) => ({
     ...defaultStyles,
-    backgroundColor: "rgba(33,37,41,0.8)",
-    border: "none",
-    boxShadow: "none",
+    padding: '6px',
+    backgroundColor: 'rgba(33,37,41,0.8)',
+    border: "0.5 solid",
   }),
+
   input: (defaultStyles) => ({
     ...defaultStyles,
     color: "white",
@@ -86,6 +87,7 @@ function LocationSearchBar({ setObserverLatLong }) {
   return (
     <div>
       <AsyncSelect
+        className="search-element"
         cacheOptions
         defaultOptions
         styles={customStyles}
