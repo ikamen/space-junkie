@@ -49,12 +49,12 @@
 }
 
 .search-element div {
-  color:rgb(209, 208, 208);
+  color: rgb(209, 208, 208);
 }
 
 .react-date-picker__wrapper {
   width: 100%;
-  background-color: rgba(33,37,41,0.8);
+  background-color: rgba(33, 37, 41, 0.8);
   color: white;
   padding: 7px;
   border-radius: 0.7 !important;
@@ -74,7 +74,7 @@
 
 .show_map {
   border: solid white;
-  color:white;
+  color: white;
 }
 
 #search-wrapper {
@@ -118,6 +118,8 @@
   background-color: rgba(92, 92, 92, 0.661);
   border-radius: 10px;
   text-transform: capitalize;
+  height: 7rem;
+  overflow: auto;
 }
 
 .search-history-wrapper hr {
@@ -147,5 +149,5 @@
 }
 
 .css-qbdosj-Input {
-  color: white!important;
+  color: white !important;
 }

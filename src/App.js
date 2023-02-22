@@ -1,26 +1,14 @@
 import { useState, useEffect } from "react";
-import Modal from "./Components/Modal";
-import ConstellationsSearchBar from "./Components/ConstellationsSearchBar";
 import moment from "moment";
 import "./App.css";
-import setNasaImage from "./Components/nasaImage";
-import LocationSearchBar from "./Components/LocationSearchBar";
 import Header from "./Components/Header";
 import { Routes, Route } from "react-router-dom";
 import CelestialObjects from "./Components/CelestialObjects";
-import SearchHistory from "./Components/SearchHistory";
 import Home from "./Components/Home";
 
 function App() {
-  // const [date, setDate] = useState(new Date());
-  // const [constelation, setConstelation] = useState({
-  //   value: "",
-  //   label: "",
-  // });
   const [isPictureOfDayLoaded, setPictureOfDayLoaded] = useState(false);
   const [pictureOfDay, setPictureOfDay] = useState({});
-  // const [isModalOpen, setModalOpen] = useState(false);
-  // const toggleModal = () => setModalOpen(!isModalOpen);
 
   useEffect(() => {
     const nasaAPIKey = "vpguNBgY5z5n0C4jP9SfnQaGB0NouzupV3pCCDq0";
@@ -48,26 +36,7 @@ function App() {
   return (
     <div className="App column fx-an-cr">
       <Header />
-      {/* <div id="search-wrapper" class="d-flex bg-wrapper">
-        <h2 class="search-heading">Constelation Maps </h2>
-        <LocationSearchBar />
-        <ConstellationsSearchBar
-          toggleModal={toggleModal}
-          isOpen={isModalOpen}
-          date={date}
-          setDate={setDate}
-          constelation={constelation}
-          setConstelation={setConstelation}
-        />
-      </div> */}
-      {/* <SearchHistory /> */}
-      {/* <Modal
-        isOpen={isModalOpen}
-        toggleModal={toggleModal}
-        date={moment(date).format("YYYY-MM-DD")}
-        constelation={constelation}
-      />{" "}
-      * */}
+
       <Routes>
         <Route
           path="/"
@@ -79,7 +48,6 @@ function App() {
           }
         />
         <Route path="celestial" element={<CelestialObjects />} />
-        {/* <Route path="missions" element={<SpaceMissions />} /> call to space mission api ??*/}
       </Routes>
     </div>
   );

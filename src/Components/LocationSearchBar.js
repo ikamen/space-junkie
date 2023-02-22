@@ -10,8 +10,8 @@ const customStyles = {
 
   control: (defaultStyles) => ({
     ...defaultStyles,
-    padding: '6px',
-    backgroundColor: 'rgba(33,37,41,0.8)',
+    padding: "6px",
+    backgroundColor: "rgba(33,37,41,0.8)",
     border: "0.5 solid",
   }),
 

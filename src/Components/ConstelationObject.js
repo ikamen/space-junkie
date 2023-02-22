@@ -20,8 +20,8 @@ const PlanetInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-left: 1rem;
-  
-  @media(min-width: 700px) {
+
+  @media (min-width: 700px) {
     flex-direction: row-reverse;
     justify-content: space-between;
   }
@@ -34,9 +34,7 @@ const Paragraph = styled.p`
   margin: 0;
 `;
 
-const InfoWrapper = styled.div`
-  
-`
+const InfoWrapper = styled.div``;
 
 const Button = styled.button`
   background: none;
@@ -51,7 +49,6 @@ export default function ConstelationObject(props) {
   const handleButtonClick = () => {
     setModalOpen(true);
   };
-  //props.objectData.constellation
 
   return (
     <>
@@ -73,9 +70,16 @@ export default function ConstelationObject(props) {
                   <p>Constellation: {props.objectData.constellation}</p>
                   <p>Right ascension: {props.objectData.right_ascension}</p>
                   <p>Declination: {props.objectData.declination}</p>
-                  <p>Absolute magnitude: {props.objectData.absolute_magnitude}</p>
-                  <p>Apparent magnitude: {props.objectData.apparent_magnitude}</p>
-                  <p>Distance in light years {props.objectData.distance_light_year}</p>
+                  <p>
+                    Absolute magnitude: {props.objectData.absolute_magnitude}
+                  </p>
+                  <p>
+                    Apparent magnitude: {props.objectData.apparent_magnitude}
+                  </p>
+                  <p>
+                    Distance in light years{" "}
+                    {props.objectData.distance_light_year}
+                  </p>
                   <p>Spectral class {props.objectData.spectral_class}</p>
                 </InfoWrapper>
               </PlanetInfo>
@@ -83,7 +87,11 @@ export default function ConstelationObject(props) {
           )}
         </>
       )}
-      {!isModalOpen && <button className='btn btn-dark' onClick={handleButtonClick}>Show More</button>}
+      {!isModalOpen && (
+        <button className="btn btn-dark" onClick={handleButtonClick}>
+          Show More
+        </button>
+      )}
       <PicturesModal
         isOpen={isModalOpen}
         setModal={setModalOpen}

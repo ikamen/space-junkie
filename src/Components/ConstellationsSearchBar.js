@@ -28,22 +28,6 @@ export default function ConstellationsSearchBar(props) {
     props.setLoading(false);
   };
 
-  // const customStyles = {
-  //     option: (defaultStyles, state) => ({
-  //         ...defaultStyles,
-  //         color: state.isSelected ? "white" : "#fff",
-  //         backgroundColor: state.isSelected ? '#36454F' : 'rgba(33,37,41,0.8)',
-  //     }),
-
-  //     control: (defaultStyles) => ({
-  //         ...defaultStyles,
-  //         backgroundColor: 'rgba(33,37,41,0.8)',
-  //         border: "none",
-  //         boxShadow: "none"
-  //     }),
-  //     singleValue: (defaultStyles) => ({ ...defaultStyles, color: "#fff" }),
-  // };
-
   const customStyles = {
     option: (defaultStyles, state) => ({
       ...defaultStyles,
@@ -53,8 +37,8 @@ export default function ConstellationsSearchBar(props) {
 
     control: (defaultStyles) => ({
       ...defaultStyles,
-      padding: '6px',
-      backgroundColor: 'rgba(33,37,41,0.8)',
+      padding: "6px",
+      backgroundColor: "rgba(33,37,41,0.8)",
       border: " 0.5 solid",
     }),
     input: (defaultStyles) => ({

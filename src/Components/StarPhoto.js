@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import starIcon from "../images/star.svg";
 
 const styles = {
-  wrapper: { "border": "1px solid red !important"},
+  wrapper: { border: "1px solid red !important" },
   img: { height: "10rem", width: "10rem" },
   loading: {
     height: "10rem",
@@ -59,22 +58,30 @@ const StarPhoto = ({ Ra, Dec }) => {
   }, [imageUrl]);
 
   return (
-    <div style={{"display": "flex", "justifyContent": "center", "alignContent": "center", "margin-right": "100px"}}>
-      <div style={{"display": "flex", "flexDirection": "column", "padding": "10px"}}>
-
-      {imageData ? (
-        <img style={styles.img} src={imageData} alt="example" />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "center",
+        "margin-right": "100px",
+      }}
+    >
+      <div
+        style={{ display: "flex", flexDirection: "column", padding: "10px" }}
+      >
+        {imageData ? (
+          <img style={styles.img} src={imageData} alt="example" />
         ) : (
           <div style={styles.loading}>Loading...</div>
-          )}
-      <button styles={{ display: "block" }} onClick={zoomIn}>
-        +
-      </button>
-      <button onClick={zoomOut}>-</button>
-      <select value={photoMode} onChange={handleChange}>
-        <option value="Standart">Standart</option>
-        <option value="Infrared">Infrared</option>
-      </select>
+        )}
+        <button styles={{ display: "block" }} onClick={zoomIn}>
+          +
+        </button>
+        <button onClick={zoomOut}>-</button>
+        <select value={photoMode} onChange={handleChange}>
+          <option value="Standart">Standart</option>
+          <option value="Infrared">Infrared</option>
+        </select>
       </div>
     </div>
   );
