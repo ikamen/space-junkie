@@ -2,7 +2,15 @@ import { useState, useEffect } from "react";
 import starIcon from "../images/star.svg";
 
 const styles = {
+  wrapper: { border: "1px solid red !important" },
   img: { height: "10rem", width: "10rem" },
+  loading: {
+    height: "10rem",
+    width: "10rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 };
 
 //Get a Photo of the Stellar Object using Right Ascension and Declination
@@ -10,6 +18,12 @@ const styles = {
 // Declination example: "+32° 28′ 26.8″"
 const StarPhoto = ({ Ra, Dec }) => {
   const [imageData, setImageData] = useState(null);
+  const [zoom, setZoom] = useState(12);
+  const [photoMode, setPhotoMode] = useState("Standart");
+
+  function handleChange(event) {
+    setPhotoMode(event.target.value);
+  }
 
   if (Ra && Dec) {
     Ra = Ra.replace(/[^−\d.\s]+/g, "")
@@ -21,7 +35,19 @@ const StarPhoto = ({ Ra, Dec }) => {
       .replace("−", "-");
   }
 
-  const imageUrl = `https://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_ir&r=${Ra}&d=${Dec}&e=J2000&h=12.0&w=12.0&f=gif&c=none&fov=NONE&v3=`;
+  const zoomOut = () => {
+    setZoom(zoom + 2);
+  };
+
+  const zoomIn = () => {
+    setZoom(zoom - 2);
+  };
+
+  // const imageUrl = `https://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_ir&r=${Ra}&d=${Dec}&e=J2000&h=${zoom}.0&w=${zoom}.0&f=gif&c=none&fov=NONE&v3=`;
+  const imageUrl =
+    photoMode === "Standart"
+      ? `https://archive.stsci.edu/cgi-bin/dss_search?v=phase2_gsc2&r=${Ra}&d=${Dec}&e=J2000&h=${zoom}.0&w=${zoom}.0&f=gif&c=none&fov=NONE&v3=`
+      : `https://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_ir&r=${Ra}&d=${Dec}&e=J2000&h=${zoom}.0&w=${zoom}.0&f=gif&c=none&fov=NONE&v3=`;
 
   useEffect(() => {
     async function fetchImageData() {
@@ -34,12 +60,21 @@ const StarPhoto = ({ Ra, Dec }) => {
   }, [imageUrl]);
 
   return (
-    <div>
+    <div styles={styles.wrapper}>
       {imageData ? (
         <img style={styles.img} src={imageData} alt="example" />
       ) : (
-        <img style={styles.img} src={starIcon} alt="star icon" />
+        <div style={styles.loading}>Loading...</div>
       )}
+
+      <button styles={{ display: "block" }} onClick={zoomIn}>
+        +
+      </button>
+      <button onClick={zoomOut}>-</button>
+      <select value={photoMode} onChange={handleChange}>
+        <option value="Standart">Standart</option>
+        <option value="Infrared">Infrared</option>
+      </select>
     </div>
   );
 };
