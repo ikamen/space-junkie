@@ -1,20 +1,24 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { getConstelationData } from "../apiCalls";
+// import { getConstelationData } from "../apiCalls";
 import ConstelationObjects from "./ConstelationObjects";
 
 const ContainerDiv = styled.div`
-    position: relative;
+    // position: relative;
+    display: flex;
+    flex-direction: column;
     max-width: 1200px;
     top: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
-    // margin-top: 0;
-    // height: 90%;
     width: 90%;
-    background-color: rgba(0,0,0,0.2);
+    // background-color: rgba(0,0,0,0.2);
 `;
+
+const ImageWrapper = styled.div`
+
+`
 
 const Img = styled.img`
   display: block;
@@ -27,17 +31,17 @@ const Img = styled.img`
   background-size: cover;
   backgorund-position: center;
 `;
-const Button = styled.button`
-  position: absolute;
-  top: 1.2rem;
-  right: 1.8rem;
-  border: none;
-  border-radius: 50%;
-  font-weight: bold;
-  cursor: pointer;
-  // font-size: .8rem;
-  // padding: .2rem;
-`;
+// const Button = styled.button`
+//   position: absolute;
+//   top: 1.2rem;
+//   right: 1.8rem;
+//   border: none;
+//   border-radius: 50%;
+//   font-weight: bold;
+//   cursor: pointer;
+//   // font-size: .8rem;
+//   // padding: .2rem;
+// `;
 
 function Map(props) {
     const [mapUrl, setMapUrl] = useState('');
@@ -83,10 +87,16 @@ function Map(props) {
     },[props.formData]);
 
     return (
-        <ContainerDiv>  
-            <Img src={mapUrl} />
-            <ConstelationObjects constelation={props.formData.constellationLabel} isLoading={props.isLoading} />
-        </ContainerDiv>
+        <>
+        {!props.isLoading &&
+            <ContainerDiv>
+                <ImageWrapper>
+                    <Img src={mapUrl} />
+                </ImageWrapper>
+                <ConstelationObjects constelation={props.formData.constellationLabel} isLoading={props.isLoading} />
+            </ContainerDiv>
+        }
+        </>
     )
 }
 

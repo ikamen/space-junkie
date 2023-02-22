@@ -8,8 +8,9 @@ const ModalOverlay = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    rigth: 0x;
+    rigth: 0;
     bottom: 0;
+    margin: 0 auto;
     height: 100%;
     width: 100%;
     max-width: 1200px;

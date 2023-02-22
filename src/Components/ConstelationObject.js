@@ -52,10 +52,10 @@ export default function ConstelationObject(props) {
             <Button onClick={props.handleNext}>next &gt;</Button>
           </PlanetHeader>
           <PlanetInfo>
-            <StarPhoto
+            {/* <StarPhoto
               Ra={props.objectData.right_ascension}
               Dec={props.objectData.declination}
-            />
+            /> */}
             <p>Constellation: {props.objectData.constellation}</p>
             <p>Right ascension: {props.objectData.right_ascension}</p>
             <p>Declination: {props.objectData.declination}</p>

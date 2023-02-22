@@ -10,8 +10,9 @@ function CelestialObjects(props) {
     const [isButtonDisabled,setButtonDisabled] = useState(true);
     const [isMapSelected,setMapSelected] = useState(false);
     const [formData,setFormData] = useState({})
-    const toggleMap = () => setMapShown(!isMapShown);
     const [date, setDate] = useState(new Date());
+    
+    const toggleMap = () => setMapShown(!isMapShown);
 
     return (
         <>
@@ -42,16 +43,16 @@ function CelestialObjects(props) {
             {isMapSelected && 
                 <Map
                     isLoading={isLoading}
+                    setLoading={setLoading}
                     mapSelected={isMapSelected}
+                    isMapShown={isMapShown}
+                    toggleMap={toggleMap}
                     formData={formData}
                     date={moment(date).format("YYYY-MM-DD")}
-                    toggleMap={toggleMap}
-                    isMapShown={isMapShown}
                     isButtonDisabled={isButtonDisabled}
                     setButtonDisabled={setButtonDisabled}
-                    setLoading={setLoading}
-            />}
-
+                />
+            }
         </>
     )
 }
