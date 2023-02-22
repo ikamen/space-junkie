@@ -2,15 +2,15 @@ import { useState } from "react";
 import ConstelationObject from "./ConstelationObject";
 import { constelationObjects } from "../constelation-objects";
 import styled from "styled-components";
-import { nasaData } from "../nasaData";
+// import { nasaData } from "../nasaData";
 import { getSpaceObjectInfo } from "../nasaData";
-import PicturesModal from "./PicturesModal";
+// import PicturesModal from "./PicturesModal";
 
 const ContainerDiv = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40%;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 100%;
   max-width: 1200px;
   // box-sizing: border-box;
   // border: 1px solid #fff;
@@ -19,7 +19,7 @@ const ContainerDiv = styled.div`
   display: flex;
   flex-direction: column;
   color: #fff;
-  padding: 1.2rem;
+  // padding: 1.2rem;
   font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.8);
 `;
@@ -28,7 +28,7 @@ export default function ConstelationObjects(props) {
   let constellationArray = constelationObjects.filter(
     (obj) => obj.constellation === props.constelation
   );
-  let [isConstellationData, setConstellationData] = useState(false);
+  const [isConstellationData, setConstellationData] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!constellationArray.length) {
