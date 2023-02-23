@@ -63,8 +63,8 @@ function LocationSearchBar({ setObserverLatLong }) {
   };
 
   const handleSelectedOption = (selectedOption) => {
-    getPlaceLatLng(selectedOption.label);
-    setSelectedOption(selectedOption);
+    //getPlaceLatLng(selectedOption.label);
+    //setSelectedOption(selectedOption);
   };
 
   function getPlaceLatLng(address) {
