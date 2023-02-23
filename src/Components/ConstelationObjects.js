@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ConstelationObject from "./ConstelationObject";
 import { constelationObjects } from "../constelation-objects";
 import styled from "styled-components";
@@ -25,6 +25,9 @@ const ContainerDiv = styled.div`
 `;
 
 export default function ConstelationObjects(props) {
+  const [hasNextObj, setNextObj] = useState(false);
+  const [hasPrevObj, setPrevObj] = useState(false);
+
   let constellationArray = constelationObjects.filter(
     (obj) => obj.constellation === props.constelation
   );
@@ -58,9 +61,24 @@ export default function ConstelationObjects(props) {
         handlePrev={handlePrev}
         name={obj.name}
         isLoading={props.isLoading}
+        hasNextObj={hasNextObj}
+        hasPrevObj={hasPrevObj}
       />
     );
   });
+
+  useEffect(() => {
+    if(constelationObject.indexOf(constelationObject[currentIndex]) > 0) {
+        setPrevObj(true)
+    } else {
+        setPrevObj(false);
+    }
+    if((constelationObject.indexOf(constelationObject[currentIndex]) +1) === constelationObject.length) {
+        setNextObj(false)
+    } else {
+        setNextObj(true)
+    }
+},[currentIndex])
 
   return <ContainerDiv>{constelationObject[currentIndex]}</ContainerDiv>;
 }

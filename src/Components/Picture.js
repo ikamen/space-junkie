@@ -62,12 +62,12 @@ function Picture(props) {
 
     return (
         <PictureExplonation>
-            <PictureButtonPrev hasPrev onClick={props.prevPicture}>&lt;</PictureButtonPrev> 
+            <PictureButtonPrev hasPrev={props.hasPrev} onClick={props.prevPicture}>&lt;</PictureButtonPrev> 
             <TextContainer>
                 <PictureTitle>{ props.title}</PictureTitle>
                 <PictureParagrah>{props.explanation}</PictureParagrah>
             </TextContainer>
-            <PictureButtonNext hasNext onClick={props.nextPicture}>&gt;</PictureButtonNext>
+            <PictureButtonNext hasNext={props.hasNext} onClick={props.nextPicture}>&gt;</PictureButtonNext>
         </PictureExplonation>
     )
 }

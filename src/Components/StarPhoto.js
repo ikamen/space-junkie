@@ -67,7 +67,7 @@ const StarPhoto = ({ Ra, Dec }) => {
         ) : (
           <div style={styles.loading}>Loading...</div>
           )}
-      <button styles={{ display: "block" }} onClick={zoomIn}>
+      <button style={{ display: "block" }} onClick={zoomIn}>
         +
       </button>
       <button onClick={zoomOut}>-</button>

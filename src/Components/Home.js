@@ -37,6 +37,13 @@ const Paragraph = styled.p`
     color: #fff;
 `
 
+const HideButton = styled.button`
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+`
+
 function Home(props) {
     const [isExplanation, setExplanation] = useState(true);
 
@@ -50,7 +57,7 @@ function Home(props) {
             <Wrapper>
                 <Title>{props.pictureOfDay.title}</Title>
                 <Paragraph>{props.pictureOfDay.explanation}</Paragraph>
-                <button onClick={handleClick}>Hide</button>            
+                <HideButton onClick={handleClick}>Hide</HideButton>            
             </Wrapper>
         }  
         {!isExplanation &&
