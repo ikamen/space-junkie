@@ -59,7 +59,7 @@ const StarPhoto = ({ Ra, Dec }) => {
   }, [imageUrl]);
 
   return (
-    <div style={{"display": "flex", "justifyContent": "center", "alignContent": "center", "margin-right": "100px"}}>
+    <div style={{"display": "flex", "justifyContent": "center", "alignContent": "center", "marginRight": "100px"}}>
       <div style={{"display": "flex", "flexDirection": "column", "padding": "10px"}}>
 
       {imageData ? (

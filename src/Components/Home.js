@@ -25,8 +25,8 @@ const Title = styled.h3`
 
 const Button = styled.button`
     position: absolute;
-    top: clamp(50rem, 60vw, 75rem);
-    // top: clamp(4rem, 6vw, 7rem);
+    // top: clamp(50rem, 60vw, 75rem);
+    bottom: clamp(1rem, 3vw, 4rem);
     right: 20px;
     background: none;
     border: none;

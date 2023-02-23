@@ -19,6 +19,7 @@ const styles = {
     alignItems: "center",
     color: "white",
     textDecoration: "none",
+    marginRight: "10px"
   },
 };
 
@@ -27,7 +28,7 @@ const Header = () => {
     <header style={styles.header}>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <img style={styles.img} src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -38,7 +39,7 @@ const Header = () => {
                 Home
               </Link>
               {/* <Nav.Link href="#home">Celestial Objects</Nav.Link> */}
-              <Link to="/celestial">Celestial Objects</Link>
+              <Link style={styles.navLink} to="/celestial">Celestial Objects</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

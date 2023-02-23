@@ -80,13 +80,18 @@ function PicturesModal(props) {
     const [currentPictureIndex,setCurrentPictureIndex] = useState(0);
     const [hasPrev,setPrev] = useState(false);
     const [hasNext,setNext] = useState(false);
+    // const [objectInfo,setObjectInfo] = useState([])
     let objectInfo = []
 
     if(getSpaceObjectInfo(props.nameOfObject).length) {
-        objectInfo = getSpaceObjectInfo(props.nameOfObject)
+        objectInfo = getSpaceObjectInfo(props.nameOfObject) 
     } else {
-        objectInfo = getSpaceObjectInfo(props.nameOfConstelation)
+        objectInfo = getSpaceObjectInfo(props.nameOfConstelation) 
     }
+
+    // if(objectInfo.length) {
+    //     props.setDataFromNasa(true);
+    // }
   
     const handleButtonClick = () => {
         props.setModal(false);
