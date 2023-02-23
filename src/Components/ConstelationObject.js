@@ -63,7 +63,6 @@ export default function ConstelationObject(props) {
     setModalOpen(true);
   };
   //props.objectData.constellation
-  console.log(props.hasPrevObj)
   return (
     <>
       {!props.isLoading && (
