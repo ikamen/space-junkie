@@ -39,13 +39,17 @@ const InfoWrapper = styled.div`
   
 `
 
-const Button = styled.button`
+const ButtonPrev = styled.button`
   background: none;
   border: none;
   // border: 1px solid #fff;
-  color: #fff;
+  color: ${props => props.hasPrevObj ? "#fff" : "#000"};
   cursor: pointer;
 `;
+
+const ButtonNext = styled(ButtonPrev)`
+  color: ${props => props.hasNextObj ? "#fff" : "#000"};
+`
 
 export default function ConstelationObject(props) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -59,7 +63,7 @@ export default function ConstelationObject(props) {
     setModalOpen(true);
   };
   //props.objectData.constellation
-
+  console.log(props.hasPrevObj)
   return (
     <>
       {!props.isLoading && (
@@ -67,9 +71,9 @@ export default function ConstelationObject(props) {
           {props.objectData.constellation && (
             <>
               <PlanetHeader>
-                <Button onClick={props.handlePrev}>&lt; prev</Button>
+                <ButtonPrev hasPrevObj={props.hasPrevObj} onClick={props.handlePrev}>&lt; prev</ButtonPrev>
                 <Paragraph>{props.objectData.name}</Paragraph>
-                <Button onClick={props.handleNext}>next &gt;</Button>
+                <ButtonNext hasNextObj={props.hasNextObj} onClick={props.handleNext}>next &gt;</ButtonNext>
               </PlanetHeader>
               <PlanetInfo>
                 <StarPhoto
